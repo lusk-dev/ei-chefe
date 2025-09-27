@@ -1,0 +1,48 @@
+---
+import logosSocial from "../assets/logos-social.svg";
+import bgCard from "../assets/bg-card.png";
+import donutChart from "../assets/donut-chart.svg";
+---
+
+<div
+  class="py-12 px-4 bg-[#F3F3F3] flex items-center flex-col gap-20 max-w-[1476.18px] w-full"
+>
+  <h3 class="text-black text-5xl leading-[60px] font-medium text-center">
+    <span class="font-light italic">Vai deixar seu </span>
+    concorrente passar na frente?
+  </h3>
+
+  <div class="flex flex-col gap-6">
+    <div
+      class="py-[32.5px] px-[30px] h-[500px] space-y-[16px] rounded-[30px]"
+      style={`background-image: url(${bgCard.src});`}
+    >
+      <p class="text-[#DDD] text-[32px] leading-[120%] font-normal">
+        No Brasil, <br /><span class="text-[40px] font-bold">
+          181 MILHÕES
+        </span> DE PESSOAS estão nas redes sociais.
+      </p>
+      <p class="text-base text-[#DDD] font-normal">
+        O que representa 80% da população ativa, estão nas redes sociais.
+      </p>
+      <img src={donutChart.src} alt="Donut Chart" />
+    </div>
+
+    <div
+      class="py-[64px] px-[30px] text-black text-2xl font-normal leading-[120%] bg-white h-[500px] rounded-[30px]"
+    >
+      Seja pelo celular ou computador, então a melhor forma de aparecer para
+      elas é ir aonde estão olhando. 👁️‍🗨️
+    </div>
+    <div
+      class="py-[64px] px-[30px] text-black text-2xl font-normal leading-[120%] bg-white space-y-[18px] h-[500px] rounded-[30px]"
+    >
+      <img src={logosSocial.src} alt="" />
+      <p>
+        Através do tráfego pago, coloco sua empresa na frente dos clientes
+        certos, no momento exato da compra. Isso resulta em mais vendas e
+        clientes que retornam.
+      </p>
+    </div>
+  </div>
+</div>
