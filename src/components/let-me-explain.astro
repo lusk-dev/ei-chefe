@@ -1,35 +1,62 @@
-<div>
-  <h2>Deixa eu te explicar o que eu faço por você</h2>
-  <p>
-    Para vender mais utilizando todo o poder das redes sociais, é necessário
-    dois tipos de investimento:
-  </p>
+---
+import chevronRight from '../assets/icons/chevron-right.svg';
+---
 
-  <button> CONVERSAR AGORA </button>
-
-  <div>
-    <h3>1°</h3>
-
-    <div>
-      <p>Investimento em Anúncios</p>
-
-      <span>
-        O valor investido para que seus anúncios apareçam nas principais
-        plataformas. Sugestão mínima de R$900/mês para resultados consistentes.
-      </span>
+<div class="space-y-[64px] px-[4.5px]">
+  <div class="flex flex-col gap-10">
+    <div class="space-y-4">
+      <h2 class="font-light italic text-5xl leading-[60px] text-black">
+        Deixa eu te explicar o que eu faço por você
+      </h2>
+      <p class="text-[#333] leading-[19.2px] text-base font-normal">
+        Para vender mais utilizando todo o poder das redes sociais, é necessário
+        dois tipos de investimento:
+      </p>
     </div>
+
+    <button
+      class="px-4 py-2 bg-[#151515] text-white rounded-[30px] flex gap-2 items-center max-w-[225px] font-light text-[14px] leading-[21px] w-full justify-center"
+    >
+      CONVERSAR AGORA
+      <div
+        class="size-[35px] rounded-[17.5px] bg-white flex justify-center items-center"
+      >
+        <img src={chevronRight.src} alt="" />
+      </div>
+    </button>
   </div>
 
-  <div>
-    <h3>2°</h3>
+  <div class="flex flex-col gap-4">
+    <div
+      class="py-[36.15px] px-6 space-y-[10px] bg-[#1C1C1C] rounded-[40px] h-[600px]"
+    >
+      <h3 class="font-light leading-[100%] text-[229px] text-white/10">1°</h3>
 
-    <div>
-      <p>Minha mão de obra.</p>
+      <p class="text-[24px] leading-[28.8px] font-bold text-white">
+        Investimento em Anúncios
+        <br />
+        <br />
+        <span class="font-normal">
+          O valor investido para que seus anúncios apareçam nas principais
+          plataformas. Sugestão mínima de R$900/mês para resultados
+          consistentes.
+        </span>
+      </p>
+    </div>
 
-      <span>
-        O valor que cobro para anunciar seu negócio diretamente para as pessoas
-        interessadas em comprar e/ou adquirir seu serviço.
-      </span>
+    <div
+      class="py-[36.15px] px-6 space-y-[10px] bg-[#1C1C1C] rounded-[40px] h-[600px]"
+    >
+      <h3 class="font-light leading-[100%] text-[229px] text-white/10">2°</h3>
+      <p class="text-[24px] leading-[28.8px] font-bold text-white">
+        Minha mão de obra.
+        <br />
+        <br />
+        <span class="font-normal">
+          O valor que cobro para anunciar seu negócio diretamente para as
+          pessoas interessadas em comprar e/ou adquirir seu serviço.
+        </span>
+      </p>
     </div>
   </div>
 </div>
