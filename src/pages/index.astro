@@ -3,7 +3,9 @@ import Clients from '../components/clients.astro';
 import ImpactHeader from '../components/impact-header.astro';
 import LetMeExplain from '../components/let-me-explain.astro';
 import Metrics from '../components/metrics.astro';
+import Plans from '../components/plans.astro';
 import Layout from '../layouts/Layout.astro';
+
 import '../styles/global.css';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -11,10 +13,13 @@ import '../styles/global.css';
 ---
 
 <Layout>
-  <div class="px-4 space-y-[116px]">
-    <ImpactHeader />
-    <Metrics />
-    <Clients />
-    <LetMeExplain />
+  <div class="space-y-[116px]">
+    <div class="px-4 space-y-[116px]">
+      <ImpactHeader />
+      <Metrics />
+      <Clients />
+      <LetMeExplain />
+    </div>
+    <Plans />
   </div>
 </Layout>
