@@ -1,0 +1,183 @@
+---
+import bgCard from "../assets/bg-card.png";
+---
+
+<div
+  class="rounded-[30px] border-[5px] border-white/20 bg-[#151515] px-6 py-14 flex flex-col gap-9"
+  style={{ backgroundImage: `url(${bgCard})` }}
+>
+  +
+  <div
+    class="italic text-center text-white leading-[115.99999999999999%] flex flex-col gap-3"
+  >
+    <h3 class="text-[33px]">Projete seus Resultados</h3>
+    <p class="text-base font-light">
+      Veja uma estimativa de quantos novos clientes você pode alcançar com base
+      no seu investimento em anúncios.
+    </p>
+  </div>
+
+  <form class="flex flex-col gap-4" id="projectionForm">
+    <!-- Investment Input -->
+    <div class="space-y-3">
+      <label for="investment" class="block text-white text-base font-semibold">
+        Quanto Pretende Investir Por Mês?
+      </label>
+      <input
+        type="number"
+        id="investment"
+        name="investment"
+        placeholder="R$ 0,00"
+        min="0"
+        step="0.01"
+        required
+        class="w-full p-4 bg-black-30 border border-white-20 rounded-xl text-white text-base placeholder-gray-500 transition-all duration-300 focus:outline-none focus:border-blue-400 focus:bg-black-40 focus:shadow-input-focus"
+      />
+    </div>
+
+    <!-- Business Type Select -->
+    <div class="space-y-3">
+      <label
+        for="businessType"
+        class="block text-white text-base font-semibold"
+      >
+        Qual Seu Tipo De Negócio?
+      </label>
+      <select
+        id="businessType"
+        name="businessType"
+        required
+        class="w-full p-4 bg-black-30 border border-white-20 rounded-xl text-white text-base transition-all duration-300 focus:outline-none focus:border-blue-400 focus:bg-black-40 focus:shadow-input-focus"
+      >
+        <option value="">Selecione</option>
+        <option value="ecommerce">E-commerce</option>
+        <option value="servicos">Serviços</option>
+        <option value="consultoria">Consultoria</option>
+        <option value="saude">Saúde</option>
+        <option value="educacao">Educação</option>
+        <option value="restaurante">Restaurante</option>
+        <option value="imobiliario">Imobiliário</option>
+        <option value="outro">Outro</option>
+      </select>
+    </div>
+
+    <!-- Conversion Rate Slider -->
+    <div class="space-y-4">
+      <h3
+        class="text-blue-400 text-base font-semibold border-b-2 border-blue-400 pb-2"
+      >
+        Taxa De Conversão Em Clientes
+      </h3>
+      <div class="space-y-3">
+        <input
+          type="range"
+          id="conversionRate"
+          name="conversionRate"
+          min="1"
+          max="20"
+          value="5"
+          class="w-full h-2 bg-gradient-slider rounded-lg appearance-none cursor-pointer slider"
+        />
+        <div class="text-center">
+          <span class="text-white text-lg font-bold" id="conversionValue"
+            >5</span
+          >
+          <span class="text-white text-lg font-bold">%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="space-y-6">
+      <!-- New Clients -->
+      <div class="space-y-3">
+        <h4 class="text-white text-sm font-semibold">Novos Clientes Por Mês</h4>
+        <div class="flex items-center gap-3">
+          <div class="flex-1 h-2 bg-white-10 rounded-lg overflow-hidden">
+            <div
+              class="h-full bg-gradient-bar rounded-lg transition-all duration-500 ease-out"
+              id="clientsBar"
+              style="width: 0%"
+            >
+            </div>
+          </div>
+          <span
+            class="text-white font-bold text-base min-w-10 text-right"
+            id="clientsResult">--</span
+          >
+        </div>
+      </div>
+
+      <!-- Estimated Contacts -->
+      <div class="space-y-3">
+        <h4 class="text-white text-sm font-semibold">
+          Contatos Estimados Por Mês
+        </h4>
+        <div class="flex items-center gap-3">
+          <div class="flex-1 h-2 bg-white-10 rounded-lg overflow-hidden">
+            <div
+              class="h-full bg-gradient-bar rounded-lg transition-all duration-500 ease-out"
+              id="contactsBar"
+              style="width: 0%"
+            >
+            </div>
+          </div>
+          <span
+            class="text-white font-bold text-base min-w-10 text-right"
+            id="contactsResult">--</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center space-y-5 pt-2">
+      <div
+        class="inline-block bg-blue-400 text-white px-4 py-2 rounded-full text-xs font-semibold"
+      >
+        298 Fill x 79 Huv
+      </div>
+      <button
+        type="button"
+        class="w-full p-4 bg-gradient-button border-0 rounded-2xl text-white text-base font-bold cursor-pointer transition-all duration-300 shadow-button hover:-translate-y-0.5 hover:shadow-button-hover active:translate-y-0"
+      >
+        Fale com um Especialista
+      </button>
+    </div>
+  </form>
+
+  <div
+    class="py-4 px-[31px] border border-[#BBBBBB] bg-[#3214E3] rounded-[100px] text-[#DDDDDD] font-medium text-base leading-[120%]"
+  >
+    Fale com um Especialista
+  </div>
+</div>
+<style>
+  /* Custom slider styles for WebKit browsers */
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Custom slider styles for Firefox */
+  .slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Select option styling */
+  select option {
+    background: #2d3748;
+    color: white;
+  }
+</style>

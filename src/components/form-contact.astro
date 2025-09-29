@@ -1,0 +1,55 @@
+---
+import global from "../assets/icons/global.svg";
+import Form from "./form.astro";
+---
+
+<section class="p-6 pb-[147px] bg-[#030406] flex flex-col gap-14">
+  <div class="space-y-2">
+    <h2
+      class="text-[48px] leading-[115.99999999999999%] text-center font-medium text-[#DDD]"
+    >
+      <span class="font-light italic">
+        Prepare-se para receber mais pessoas querendo o serviço,
+      </span>
+      implorando por agendar um horário
+    </h2>
+    <div class="flex gap-4 items-center justify-center">
+      <span class="text-white text-sm leading-[21px] font-normal"
+        >Principais clientes atendidos</span
+      >
+      <div class="border-l-[#DEE2E6] border-l pl-4">
+        <img src={global.src} alt="" width="30" height="30" />
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-8">
+    <Form />
+    <div
+      class="px-8 pb-10 pt-[130px] text-white leading-[28.8px] font-normal text-[24px] bg-[#1C1C1C] rounded-[40px]"
+    >
+      Empresários de negócios locais como restaurantes, bares, contabilidade,
+      clinica odontológica e médicos especialistas ou dentistas que possuem
+      clinicas com foco HOF
+    </div>
+    <div
+      class="px-8 pb-10 pt-[130px] text-white leading-[28.8px] font-normal text-[24px] bg-[#1C1C1C] rounded-[40px]"
+    >
+      Que não estão satisfeitos com a demanda nos canais de atendimento ou
+      procura no consultório e precisa atrair, captar e converter mais para
+      aumentar seu faturamento.
+    </div>
+    <div
+      class="py-10 px-8 flex flex-col gap-6 text-white bg-[#2A25A6] rounded-[40px]"
+    >
+      <h3 class="leading-[100%] font-bold text-[32px]">
+        Meu negócio não é um consultório, serve pra mim ?
+      </h3>
+      <p class="leading-[28.8px] font-normal text-[24px]">
+        Sim, durante esses anos trabalhando com equipes de marketing e donos de
+        negócios, além de eventos, conversas e palestra sobre outros negócios
+        como petshops, restaurantes ou supermercado, me sinto pronto para
+        atender outros nichos.
+      </p>
+    </div>
+  </div>
+</section>

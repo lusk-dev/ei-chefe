@@ -1,0 +1,58 @@
+---
+import eiChefeLogo from "../assets/logos/ei-chefe-logo.svg";
+import bgFooter from "../assets/bg-footer.png";
+import chevronRight from "../assets/icons/chevron-right.svg";
+import LinksFooter from "./links-footer.astro";
+---
+
+<footer
+  class="px-6 py-20 rounded-t-[40px]"
+  style={`background-image: url(${bgFooter.src}); background-size: cover;`}
+>
+  <div class="flex flex-col gap-2">
+    <img src={eiChefeLogo.src} alt="eiChefe Logo" width="163" height="53" />
+    <div class="flex flex-col gap-4">
+      <div>
+        <p
+          class="text-white/50 text-[32px] font-light italic leading-[115.99999999999999%] text-right"
+        >
+          Vamos começar
+        </p>
+        <h2
+          class="text-white text-[56px] font-normal text-right leading-[115.99999999999999%]"
+        >
+          seu projeto
+        </h2>
+      </div>
+
+      <button
+        class="px-4 py-2 bg-[#151515] text-white rounded-[30px] flex gap-2 items-center max-w-[225px] font-light text-[14px] leading-[21px] w-full justify-between self-end"
+      >
+        CONVERSAR AGORA
+        <div
+          class="size-[35px] rounded-[17.5px] bg-white flex justify-center items-center"
+        >
+          <img src={chevronRight.src} alt="" />
+        </div>
+      </button>
+    </div>
+  </div>
+  <div class="p-[50px] flex flex-col gap-[10px]">
+    <div class="font-normal leading-[24px] text-base text-[#999]">
+      Av. Ailton Gomes, de - Alencar, 4900 Lagoa Seca, Juazeiro do Norte - CE
+      CNPJ 36.490.397/0001-94
+      <ul>
+        <li class="list-disc ml-6">
+          Política de Entrega e data estimada de entrega dos produtos
+        </li>
+        <li class="list-disc ml-6">
+          Políticas de Troca, Devolução e Reembolso
+        </li>
+      </ul>
+    </div>
+    <span class="font-normal text-sm leading-[21px] text-white"
+      >2024 © Luanderson Rodrigues. Todos os direitos reservados.</span
+    >
+    <LinksFooter />
+  </div>
+</footer>

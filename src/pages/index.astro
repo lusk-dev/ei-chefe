@@ -1,18 +1,26 @@
 ---
-import Clients from '../components/clients.astro';
-import ImpactHeader from '../components/impact-header.astro';
-import LetMeExplain from '../components/let-me-explain.astro';
-import Metrics from '../components/metrics.astro';
-import Plans from '../components/plans.astro';
-import Layout from '../layouts/Layout.astro';
+import Clients from "../components/clients.astro";
+import ImpactHeader from "../components/impact-header.astro";
+import LetMeExplain from "../components/let-me-explain.astro";
+import Metrics from "../components/metrics.astro";
+import Plans from "../components/plans.astro";
+import Layout from "../layouts/Layout.astro";
+import WhoAmI from "../components/who-am-i.astro";
+import WhyMe from "../components/why-me.astro";
+import FrequentlyAskedQuestions from "../components/frequently-asked-questions.astro";
+import Footer from "../components/footer.astro";
 
-import '../styles/global.css';
+import Hero from "../components/hero.astro";
+import "../styles/global.css";
+import FormContact from "../components/form-contact.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
+  <Hero />
+
   <div class="space-y-[116px]">
     <div class="px-4 space-y-[116px]">
       <ImpactHeader />
@@ -21,5 +29,12 @@ import '../styles/global.css';
       <LetMeExplain />
     </div>
     <Plans />
+    <div class="-mt-[116px]">
+      <FormContact />
+    </div>
+    <WhoAmI />
+    <WhyMe />
+    <FrequentlyAskedQuestions />
+    <Footer />
   </div>
 </Layout>

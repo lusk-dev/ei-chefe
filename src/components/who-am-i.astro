@@ -1,0 +1,31 @@
+---
+import cardHelp from "../assets/card-help.png";
+import cardTe from "../assets/card-te.png";
+import CardApresentation from "./card-apresentation.astro";
+---
+
+<div class="flex flex-col gap-12 px-5">
+  <div class="flex flex-col">
+    <div
+      class="text-black font-normal text-[48px] leading-[90px] p-10 flex justify-center items-center bg-[#EFEFEF] rounded-[100px]"
+    >
+      QUEM
+    </div>
+    <img src={cardTe.src} alt="" />
+    <img src={cardHelp.src} alt="" />
+  </div>
+  <div class="flex flex-col gap-12">
+    <p
+      class="text-[40px] leading-[115.99999999999999%] font-normal text-[#151515]"
+    >
+      Paixão por dados, foco em resultados. Invisto +R$900.000 em campanhas e
+      estudo constante para entregar o melhor para o seu negócio.
+    </p>
+    <CardApresentation />
+    <p
+      class="text-[32px] leading-[115.99999999999999%] font-normal text-[#151515]"
+    >
+      Membro da Comunidade Sobral e parceiro @InciBrasil.
+    </p>
+  </div>
+</div>

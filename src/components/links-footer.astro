@@ -1,0 +1,48 @@
+---
+import instagram from "../assets/logos/instagram.svg";
+import facebook from "../assets/logos/facebook.svg";
+import be from "../assets/logos/be.svg";
+import dribble from "../assets/logos/dribble.svg";
+
+const links = [
+  {
+    href: "https://www.facebook.com/eichefe/",
+    src: facebook.src,
+    alt: "Facebook",
+  },
+  {
+    href: "https://www.instagram.com/eiluanderson/",
+    src: instagram.src,
+    alt: "Instagram",
+  },
+  {
+    href: "https://www.dribble.com/eichefe/",
+    src: dribble.src,
+    alt: "dribble",
+  },
+  {
+    href: "https://www.be.com/eichefe/",
+    src: be.src,
+    alt: "be",
+  },
+];
+---
+
+<div>
+  <span class="text-white leading-[42px] text-[28px] font-normal"
+    >Nossas Redes</span
+  >
+  <div class="flex gap-[5px]">
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          target="_blank"
+          class="p-4 rounded-full border border-white/20"
+        >
+          <img src={link.src} alt={link.alt} />
+        </a>
+      ))
+    }
+  </div>
+</div>
