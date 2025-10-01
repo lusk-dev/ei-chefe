@@ -1,9 +1,16 @@
 ---
-import bgPlanCard from "../assets/bg-plan-card.png";
+interface Props {
+  className?: string;
+}
+
+import { cn } from '@/lib/utils';
+import bgPlanCard from '../assets/bg-plan-card.png';
+import chevronRight from '../assets/icons/chevron-right.svg';
+const { className } = Astro.props;
 ---
 
-<div class="bg-[#030406] py-[150px] px-6">
-  <div class="flex flex-col gap-6">
+<div class={cn('bg-[#030406] py-[150px] px-6 space-y-[88px]', className)}>
+  <div class="flex flex-col gap-6 md:flex-row">
     <div class="flex flex-col gap-10">
       <div class="space-y-6">
         <h2 class="text-white text-[48px] font-light italic leading-[60px]">
@@ -15,9 +22,14 @@ import bgPlanCard from "../assets/bg-plan-card.png";
         </p>
       </div>
       <button
-        class="bg-[#1A1E38] text-[#DDDDDD] rounded-[30px] font-semibold flex justify-center items-center gap-[10px] p-8 text-[26px] leading-[120%]"
+        class="bg-[#1A1E38] text-[#DDDDDD] rounded-[30px] font-semibold flex justify-center items-center gap-[10px] p-8 text-[26px] leading-[120%] max-w-[528px]"
       >
         COMEÇAR UM NOVO PROJETO
+        <div
+          class="size-[35px] rounded-[17.5px] bg-[#2A51E6] flex justify-center items-center"
+        >
+          <img src={chevronRight.src} alt="" />
+        </div>
       </button>
     </div>
 
@@ -35,26 +47,30 @@ import bgPlanCard from "../assets/bg-plan-card.png";
       </p>
     </div>
   </div>
-  <div class="flex flex-col gap-8">
-    <div class="bg-[#F3F3F3] p-6 rounded-[30px]">
-      <h3 class="font-light italic text-[40px] leading-[100%] text-black mb-6">
-        Quero começar,
-        <span class="font-medium text-[48px]">Chefe</span>
-      </h3>
-      <div class="mb-10 font-medium text-[20px] leading-[150%] text-[#292D38]">
-        <span class="leading-[115.99999999999999%] text-[#3219CA] font-bold"
-          >Planejamento Análise de Dados Planejamento de Crescimento
-        </span>
-        <br />
-        <br />
-        <ul>
-          <span class="font-bold">Análise de posicionamento de marca </span>
-          <li class="list-disc ml-6">Sugestão para conteúdos.</li>
-          <li class="list-disc ml-6">Sugestões de edições de videos.</li>
-          <li class="list-disc ml-6">
-            Sugestão para landing pages (páginas de alta conversão)
-          </li>
-        </ul>
+  <div class="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div class="bg-[#F3F3F3] p-6 rounded-[30px] flex flex-col justify-between">
+      <div>
+        <h3
+          class="font-light italic text-[40px] leading-[100%] text-black mb-6"
+        >
+          Quero começar,
+          <span class="font-medium text-[48px]">Chefe</span>
+        </h3>
+        <div class="font-medium text-[20px] leading-[150%] text-[#292D38]">
+          <span class="leading-[115.99999999999999%] text-[#3219CA] font-bold"
+            >Planejamento Análise de Dados Planejamento de Crescimento
+          </span>
+          <br />
+          <br />
+          <ul>
+            <span class="font-bold">Análise de posicionamento de marca </span>
+            <li class="list-disc ml-6">Sugestão para conteúdos.</li>
+            <li class="list-disc ml-6">Sugestões de edições de videos.</li>
+            <li class="list-disc ml-6">
+              Sugestão para landing pages (páginas de alta conversão)
+            </li>
+          </ul>
+        </div>
       </div>
       <div
         class="py-6 px-[31px] bg-[#151515] border border-[#212529] rounded-[100px] text-white leading-[120%] text-base"
@@ -62,29 +78,33 @@ import bgPlanCard from "../assets/bg-plan-card.png";
         Investimento em anúncios até R$2.500/mês
       </div>
     </div>
-    <div class="bg-[#F3F3F3] p-6 rounded-[30px]">
-      <h3 class="font-light italic text-[40px] leading-[100%] text-black mb-6">
-        Bora aumentar,
-        <span class="font-medium text-[48px]"> Chefe </span>
-      </h3>
-      <div class="mb-10 font-medium text-[20px] leading-[150%] text-[#292D38]">
-        <span class="leading-[115.99999999999999%] font-bold">
-          Assessoria de mídia paga Tudo do outro modelo +
-        </span>
-        <br />
-        <br />
-        <ul>
-          <span class="font-bold">Assessoria de análise de dados 🔍 </span>
-          <li class="list-disc ml-6">Gestão em multiplataforma de anúncio</li>
-          <li class="list-disc ml-6">Configuração de Tags e Pixels</li>
-          <li class="list-disc ml-6">
-            Análise da velocidade do site realizado trimestral
-          </li>
-          <li class="list-disc ml-6">
-            Estudo dos concorrentes Benchmarking análise do site e anúncios
-            anual
-          </li>
-        </ul>
+    <div class="bg-[#F3F3F3] p-6 rounded-[30px] flex flex-col justify-between">
+      <div>
+        <h3
+          class="font-light italic text-[40px] leading-[100%] text-black mb-6"
+        >
+          Bora aumentar,
+          <span class="font-medium text-[48px]"> Chefe </span>
+        </h3>
+        <div class="font-medium text-[20px] leading-[150%] text-[#292D38]">
+          <span class="leading-[115.99999999999999%] font-bold">
+            Assessoria de mídia paga Tudo do outro modelo +
+          </span>
+          <br />
+          <br />
+          <ul>
+            <span class="font-bold">Assessoria de análise de dados 🔍 </span>
+            <li class="list-disc ml-6">Gestão em multiplataforma de anúncio</li>
+            <li class="list-disc ml-6">Configuração de Tags e Pixels</li>
+            <li class="list-disc ml-6">
+              Análise da velocidade do site realizado trimestral
+            </li>
+            <li class="list-disc ml-6">
+              Estudo dos concorrentes Benchmarking análise do site e anúncios
+              anual
+            </li>
+          </ul>
+        </div>
       </div>
       <div
         class="py-6 px-[31px] bg-[#151515] border border-[#212529] rounded-[100px] text-white leading-[120%] text-base"
