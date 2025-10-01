@@ -1,8 +1,9 @@
 ---
-import eiChefeLogo from "../assets/logos/ei-chefe-logo.svg";
-import bgFooter from "../assets/bg-footer.png";
-import chevronRight from "../assets/icons/chevron-right.svg";
-import LinksFooter from "./links-footer.astro";
+import bgFooter from '../assets/bg-footer.png';
+import eiChefeLogo from '../assets/logos/ei-chefe-logo.svg';
+
+import LinksFooter from './links-footer.astro';
+import WhatsappButton from './whatsapp-button.astro';
 ---
 
 <footer
@@ -25,16 +26,7 @@ import LinksFooter from "./links-footer.astro";
         </h2>
       </div>
 
-      <button
-        class="px-4 py-2 bg-[#151515] text-white rounded-[30px] flex gap-2 items-center max-w-[225px] font-light text-[14px] leading-[21px] w-full justify-between self-end"
-      >
-        CONVERSAR AGORA
-        <div
-          class="size-[35px] rounded-[17.5px] bg-white flex justify-center items-center"
-        >
-          <img src={chevronRight.src} alt="" />
-        </div>
-      </button>
+      <WhatsappButton />
     </div>
   </div>
   <div class="p-[50px] flex flex-col gap-[10px]">

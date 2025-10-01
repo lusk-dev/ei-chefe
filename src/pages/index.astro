@@ -1,18 +1,19 @@
 ---
-import Clients from "../components/clients.astro";
-import ImpactHeader from "../components/impact-header.astro";
-import LetMeExplain from "../components/let-me-explain.astro";
-import Metrics from "../components/metrics.astro";
-import Plans from "../components/plans.astro";
-import Layout from "../layouts/Layout.astro";
-import WhoAmI from "../components/who-am-i.astro";
-import WhyMe from "../components/why-me.astro";
-import FrequentlyAskedQuestions from "../components/frequently-asked-questions.astro";
-import Footer from "../components/footer.astro";
+import Clients from '../components/clients.astro';
+import Footer from '../components/footer.astro';
+import FrequentlyAskedQuestions from '../components/frequently-asked-questions.astro';
+import ImpactHeader from '../components/impact-header.astro';
+import LetMeExplain from '../components/let-me-explain.astro';
+import Metrics from '../components/metrics.astro';
+import Plans from '../components/plans.astro';
+import WhoAmI from '../components/who-am-i.astro';
+import WhyMe from '../components/why-me.astro';
+import Layout from '../layouts/Layout.astro';
 
-import Hero from "../components/hero.astro";
-import "../styles/global.css";
-import FormContact from "../components/form-contact.astro";
+import { TailwindIndicator } from '@/components/tailwind-indicator';
+import { TestimonialsSection } from '@/components/testimonials-section';
+import Hero from '../components/hero.astro';
+import '../styles/global.css';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -29,12 +30,14 @@ import FormContact from "../components/form-contact.astro";
       <LetMeExplain />
     </div>
     <Plans />
-    <div class="-mt-[116px]">
-      <FormContact />
-    </div>
+    <!-- <div class="-mt-[116px]"> -->
+    <!-- <FormContact /> -->
+    <!-- </div> -->
     <WhoAmI />
     <WhyMe />
+    <TestimonialsSection />
     <FrequentlyAskedQuestions />
     <Footer />
   </div>
+  <TailwindIndicator />
 </Layout>
