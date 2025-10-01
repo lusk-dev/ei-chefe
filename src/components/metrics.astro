@@ -1,18 +1,30 @@
 ---
-import logosSocial from "../assets/logos-social.svg";
-import bgCard from "../assets/bg-card.png";
-import donutChart from "../assets/donut-chart.svg";
+interface Props {
+  className?: string;
+}
+
+import { cn } from '@/lib/utils';
+import bgCard from '../assets/bg-card.png';
+import donutChart from '../assets/donut-chart.svg';
+import logosSocial from '../assets/logos-social.svg';
+
+const { className } = Astro.props;
 ---
 
 <div
-  class="py-12 px-4 bg-[#F3F3F3] flex items-center flex-col gap-20 max-w-[1476.18px] w-full rounded-[40px]"
+  class={cn(
+    'py-12 px-4 bg-[#F3F3F3] flex items-center flex-col gap-20 max-w-[1476.18px] w-full rounded-[40px] mx-auto',
+    className
+  )}
 >
   <h3 class="text-black text-5xl leading-[60px] font-medium text-center">
     <span class="font-light italic">Vai deixar seu </span>
     concorrente passar na frente?
   </h3>
 
-  <div class="flex flex-col gap-6">
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-[1380px]"
+  >
     <div
       class="py-[32.5px] px-[30px] h-[500px] flex flex-col gap-4 rounded-[30px]"
       style={`background-image: url(${bgCard.src});`}
@@ -21,12 +33,15 @@ import donutChart from "../assets/donut-chart.svg";
         No Brasil, <br /><span class="text-[40px] font-bold">
           181 MILHÕES
         </span>
+        <br />
         <span class="text-2xl leading-[120%]">
           DE PESSOAS estão <br />nas redes sociais.
         </span>
       </p>
-      <div class="flex flex-col gap-4">
-        <p class="text-base text-[#DDD] font-normal">
+      <div class="flex flex-col gap-4 md:flex-row">
+        <p
+          class="text-base text-[#DDD] font-normal md:text-[20px] leading-[120%]"
+        >
           O que representa 80% da população ativa, estão nas redes sociais.
         </p>
         <img
@@ -38,13 +53,13 @@ import donutChart from "../assets/donut-chart.svg";
     </div>
 
     <div
-      class="py-[64px] px-[30px] text-black text-2xl font-normal leading-[120%] bg-white h-[500px] rounded-[30px]"
+      class="py-[64px] px-[30px] text-black text-2xl md:text-[32px] font-normal leading-[120%] bg-white h-[500px] rounded-[30px]"
     >
       Seja pelo celular ou computador, então a melhor forma de aparecer para
       elas é ir aonde estão olhando. 👁️‍🗨️
     </div>
     <div
-      class="py-[64px] px-[30px] text-black text-2xl font-normal leading-[120%] bg-white space-y-[18px] h-[500px] rounded-[30px]"
+      class="py-[64px] px-[30px] text-black text-2xl font-normal leading-[120%] bg-white space-y-[18px] h-[500px] rounded-[30px] md:text-[32px] md:leading-[36px]"
     >
       <img src={logosSocial.src} alt="" />
       <p>

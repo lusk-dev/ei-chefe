@@ -1,8 +1,18 @@
 ---
+interface Props {
+  className?: string;
+}
+import { cn } from '@/lib/utils';
 import WhatsappButton from './whatsapp-button.astro';
+const { className } = Astro.props;
 ---
 
-<div class="space-y-[64px] px-[4.5px]">
+<div
+  class={cn(
+    'flex flex-col gap-[64px] md:gap-[120px] md:flex-row px-[16.5px] md:flex md:justify-between',
+    className
+  )}
+>
   <div class="flex flex-col gap-10">
     <div class="space-y-4">
       <h2 class="font-light italic text-5xl leading-[60px] text-black">
@@ -17,7 +27,7 @@ import WhatsappButton from './whatsapp-button.astro';
     <WhatsappButton />
   </div>
 
-  <div class="flex flex-col gap-4">
+  <div class="max-w-[840px] w-full grid md:grid-cols-2 grid-cols-1 gap-4">
     <div
       class="py-[36.15px] px-6 space-y-[10px] bg-[#1C1C1C] rounded-[40px] h-[600px]"
     >

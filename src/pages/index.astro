@@ -20,17 +20,16 @@ import '../styles/global.css';
 ---
 
 <Layout>
-  <div class="md:mb-[240px]">
-    <Hero />
-  </div>
+  <Hero />
+  <ImpactHeader
+    className="max-w-[912px] mx-auto w-full xl:pt-[60px] xl:mb-20 mb-[116px]"
+  />
+  <Metrics className="md:mb-[116px] mb-[120px] px-4" />
+  <Clients className="px-4 mb-[120px]" />
+  <LetMeExplain className="max-w-[1629px] mx-auto w-full" />
 
   <div class="space-y-[116px]">
-    <div class="px-4 space-y-[116px]">
-      <ImpactHeader />
-      <Metrics />
-      <Clients />
-      <LetMeExplain />
-    </div>
+    <div class="px-4 space-y-[116px]"></div>
     <Plans />
     <!-- <div class="-mt-[116px]"> -->
     <!-- <FormContact /> -->

@@ -1,12 +1,19 @@
 ---
+interface Props {
+  className?: string;
+}
+
+import { cn } from '@/lib/utils';
 import autonoveLogo from '../assets/logos/autonove-logo.png';
 import donutsLogo from '../assets/logos/donuts.png';
 import giaiLogo from '../assets/logos/gai-logo.png';
 import point from '../assets/point.svg';
+
+const { className } = Astro.props;
 ---
 
-<div class="flex flex-col gap-8">
-  <div>
+<div class={cn('flex flex-col gap-8', className)}>
+  <div class="max-w-[827px] mx-auto">
     <div
       class="flex items-center px-4 pt-2 gap-2 mx-auto bg-[#EFEFEF] max-w-max rounded-[6px]"
     >
@@ -21,12 +28,14 @@ import point from '../assets/point.svg';
       Como as melhores empresas se beneficiam do tráfego pago
     </h2>
   </div>
-  <div class="flex flex-col gap-10">
+  <div
+    class="max-w-[1620px] mx-auto grid md:grid-cols-2 md:auto-cols-[510px] lg:grid-cols-3 gap-10"
+  >
     <div class="space-y-8">
       <img
         src={donutsLogo.src}
         alt=""
-        class="w-[360px] h-[360px] rounded-3xl"
+        class="min-w-[360px] w-full h-[360px] rounded-3xl max-w-[510px]"
       />
       <div class="space-y-2">
         <h3
@@ -51,7 +60,7 @@ import point from '../assets/point.svg';
       <img
         src={autonoveLogo.src}
         alt=""
-        class="w-[360px] h-[360px] rounded-3xl"
+        class="min-w-[360px] w-full h-[360px] rounded-3xl max-w-[510px]"
       />
       <div class="space-y-2">
         <h3
@@ -75,7 +84,11 @@ import point from '../assets/point.svg';
       </div>
     </div>
     <div class="space-y-8">
-      <img src={giaiLogo.src} alt="" class="w-[360px] h-[360px] rounded-3xl" />
+      <img
+        src={giaiLogo.src}
+        alt=""
+        class="min-w-[360px] w-full h-[360px] rounded-3xl max-w-[510px]"
+      />
       <div class="space-y-2">
         <h3
           class="text-[#777777] text-[32px] font-normal leading-[100%] italic"
