@@ -1,8 +1,14 @@
 ---
-import Point from "../assets/point.svg";
+interface Props {
+  className?: string;
+}
+
+import { cn } from '@/lib/utils';
+import Point from '../assets/point.svg';
+const { className } = Astro.props;
 ---
 
-<section class="flex flex-col gap-10 px-4 pb-[165px]">
+<section class={cn('flex flex-col gap-10 px-4 pb-[165px]', className)}>
   <div class="flex flex-col gap-[30px]">
     <div
       class="flex items-center px-4 py-2 gap-2 mx-auto bg-[#EFEFEF] max-w-max rounded-[6px]"
@@ -16,7 +22,7 @@ import Point from "../assets/point.svg";
       Perguntas frequentes
     </h2>
   </div>
-  <div class="flex flex-col gap-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
     <div class="flex gap-4">
       <div class="flex flex-col gap-[5px] items-center">
         <span class="font-normal text-[#999] text-[12px] leading-[18px]"
@@ -45,7 +51,7 @@ import Point from "../assets/point.svg";
         >
         <div class="bg-[#DDD] h-full w-px"></div>
       </div>
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 pt-8">
         <h4
           class="p-5 text-[#888] text-[20px] leading-[24px] font-medium bg-[#F3F3F3] rounded-[15px]"
         >
@@ -68,7 +74,7 @@ import Point from "../assets/point.svg";
         >
         <div class="bg-[#DDD] h-full w-px"></div>
       </div>
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 pt-16">
         <h4
           class="p-5 text-[#888] text-[20px] leading-[24px] font-medium bg-[#F3F3F3] rounded-[15px]"
         >
@@ -93,7 +99,7 @@ import Point from "../assets/point.svg";
         >
         <div class="bg-[#DDD] h-full w-px"></div>
       </div>
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 pt-[100px]">
         <h4
           class="p-5 text-[#888] text-[20px] leading-[24px] font-medium bg-[#F3F3F3] rounded-[15px]"
         >

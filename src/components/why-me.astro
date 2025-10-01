@@ -1,10 +1,18 @@
 ---
-import meetingImg from "../assets/meeting.png";
-import attachmentImg from "../assets/attachment.png";
+interface Props {
+  className?: string;
+}
+
+import { cn } from '@/lib/utils';
+import { Image } from 'astro:assets';
+import attachmentImg from '../assets/attachment.png';
+import meetingImg from '../assets/meeting.png';
+
+const { className } = Astro.props;
 ---
 
-<div class="px-4 flex flex-col gap-14">
-  <div class="flex flex-col gap-4">
+<div class={cn('px-4 flex flex-col gap-14 lg:flex-row ', className)}>
+  <div class="flex flex-col gap-4 max-w-[696px] w-full">
     <h2 class="italic font-light text-[48px] leading-[120%] text-black">
       Por que deveria contratar meu serviço para sua empresa
     </h2>
@@ -12,15 +20,14 @@ import attachmentImg from "../assets/attachment.png";
       Principais clientes atendidos
     </p>
   </div>
-  <div class="flex flex-col gap-6">
+  <div class="flex flex-col gap-6 max-w-[844px] w-full">
     <div
-      class="py-[56px] px-6 bg-black text-white flex flex-col gap-10 rounded-[40px]"
+      class="py-[56px] px-6 bg-black text-white flex flex-col lg:flex-row gap-10 rounded-[40px]"
     >
-      <img
-        src={attachmentImg.src}
+      <Image
+        src={attachmentImg}
         alt=""
-        class="rounded-[20px]"
-        width="313"
+        class="rounded-[20px] lg:max-w-[354px] w-full object-cover"
         height="437.2799987792969"
       />
       <div class="flex flex-col gap-6">
@@ -42,24 +49,30 @@ import attachmentImg from "../assets/attachment.png";
       </div>
     </div>
     <div
-      class="py-[56px] px-6 bg-black text-white flex flex-col gap-6 rounded-[40px]"
+      class="py-[56px] px-6 bg-black text-white flex flex-col gap-6 rounded-[40px] lg:flex-row"
     >
-      <h3
-        class="text-[32px] leading-[115.99999999999999%] italic font-extrabold"
-      >
-        2° Recomendação de conteúdos
-      </h3>
-      <p class="text-base font-normal leading-[115.99999999999999%]">
-        Uma coisa coisa é solicitar novos anúncios, outras é sugerir conteúdos
-        orgânicos que podem gerar mais tráfego. Diferentes de outros gestores,
-        recomendo inserção de novos conteúdos para rede sociais e melhoria
-        dentro do site de vendas, recomendação de linha editorial no youtube.
-        <br />
-        <br />
-        Tudo isso para aumentar a presença da marca. Minha experiência com diversos
-        socias medias proporciona ter bons olhos para novos conteúdos.
-      </p>
-      <img src={meetingImg.src} alt="" class="rounded-[20px]" />
+      <div class="flex flex-col gap-6">
+        <h3
+          class="text-[32px] leading-[115.99999999999999%] italic font-extrabold"
+        >
+          2° Recomendação de conteúdos
+        </h3>
+        <p class="text-base font-normal leading-[115.99999999999999%]">
+          Uma coisa coisa é solicitar novos anúncios, outras é sugerir conteúdos
+          orgânicos que podem gerar mais tráfego. Diferentes de outros gestores,
+          recomendo inserção de novos conteúdos para rede sociais e melhoria
+          dentro do site de vendas, recomendação de linha editorial no youtube.
+          <br />
+          <br />
+          Tudo isso para aumentar a presença da marca. Minha experiência com diversos
+          socias medias proporciona ter bons olhos para novos conteúdos.
+        </p>
+      </div>
+      <Image
+        src={meetingImg}
+        alt=""
+        class="rounded-[20px] max-w-[362px] w-full h-[437.2799987792969px] object-cover object-top"
+      />
     </div>
     <div
       class="py-[56px] px-6 bg-black text-white flex flex-col gap-6 rounded-[40px]"

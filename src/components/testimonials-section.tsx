@@ -1,3 +1,5 @@
+import { cn } from '@/lib/utils';
+
 interface Testimonial {
   id: string;
   name: string;
@@ -22,9 +24,14 @@ const testimonials: Testimonial[] = [
   }
 ];
 
-export function TestimonialsSection() {
+interface TestimonialsSectionProps extends React.HTMLProps<HTMLElement> {}
+
+export function TestimonialsSection({
+  className,
+  ...props
+}: TestimonialsSectionProps) {
   return (
-    <section className="py-20 px-4 bg-background">
+    <section className={cn('py-20 px-4 bg-background', className)} {...props}>
       <div className="max-w-7xl mx-auto">
         <h2 className="italic font-light text-[48px] leading-[120%] text-black mb-14 text-center">
           O que os clientes falam

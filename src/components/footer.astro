@@ -1,50 +1,61 @@
 ---
+interface Props {
+  className?: string;
+}
 import bgFooter from '../assets/bg-footer.png';
 import eiChefeLogo from '../assets/logos/ei-chefe-logo.svg';
 
+import { cn } from '@/lib/utils';
 import LinksFooter from './links-footer.astro';
 import WhatsappButton from './whatsapp-button.astro';
+const { className } = Astro.props;
 ---
 
 <footer
-  class="px-6 py-20 rounded-t-[40px]"
+  class={cn('px-6 py-20 rounded-t-[40px]', className)}
   style={`background-image: url(${bgFooter.src}); background-size: cover;`}
 >
-  <div class="flex flex-col gap-2">
-    <img src={eiChefeLogo.src} alt="eiChefe Logo" width="163" height="53" />
-    <div class="flex flex-col gap-4">
-      <div>
-        <p
-          class="text-white/50 text-[32px] font-light italic leading-[115.99999999999999%] text-right"
-        >
-          Vamos começar
-        </p>
-        <h2
-          class="text-white text-[56px] font-normal text-right leading-[115.99999999999999%]"
-        >
-          seu projeto
-        </h2>
-      </div>
+  <div class="max-w-[1320px] mx-auto">
+    <div class="flex flex-col gap-2">
+      <img src={eiChefeLogo.src} alt="eiChefe Logo" width="163" height="53" />
+      <div class="flex flex-col gap-4">
+        <div>
+          <p
+            class="text-white/50 text-[32px] font-light italic leading-[115.99999999999999%] text-right"
+          >
+            Vamos começar
+          </p>
+          <h2
+            class="text-white text-[56px] font-normal text-right leading-[115.99999999999999%]"
+          >
+            seu projeto
+          </h2>
+        </div>
 
-      <WhatsappButton />
+        <WhatsappButton />
+      </div>
     </div>
-  </div>
-  <div class="p-[50px] flex flex-col gap-[10px]">
-    <div class="font-normal leading-[24px] text-base text-[#999]">
-      Av. Ailton Gomes, de - Alencar, 4900 Lagoa Seca, Juazeiro do Norte - CE
-      CNPJ 36.490.397/0001-94
-      <ul>
-        <li class="list-disc ml-6">
-          Política de Entrega e data estimada de entrega dos produtos
-        </li>
-        <li class="list-disc ml-6">
-          Políticas de Troca, Devolução e Reembolso
-        </li>
-      </ul>
-    </div>
-    <span class="font-normal text-sm leading-[21px] text-white"
-      >2024 © Luanderson Rodrigues. Todos os direitos reservados.</span
+    <div
+      class="p-[50px] flex flex-col gap-[10px] lg:flex-row lg:justify-between"
     >
-    <LinksFooter />
+      <div>
+        <div class="font-normal leading-[24px] text-base text-[#999]">
+          Av. Ailton Gomes, de - Alencar, 4900 Lagoa Seca, Juazeiro do Norte -
+          CE <br /> CNPJ 36.490.397/0001-94
+          <ul>
+            <li class="list-disc ml-6">
+              Política de Entrega e data estimada de entrega dos produtos
+            </li>
+            <li class="list-disc ml-6">
+              Políticas de Troca, Devolução e Reembolso
+            </li>
+          </ul>
+        </div>
+        <span class="font-normal text-sm leading-[21px] text-white"
+          >2024 © Luanderson Rodrigues. Todos os direitos reservados.</span
+        >
+      </div>
+      <LinksFooter />
+    </div>
   </div>
 </footer>
