@@ -1,19 +1,19 @@
 ---
-import Clients from '../components/clients.astro';
-import Footer from '../components/footer.astro';
-import FrequentlyAskedQuestions from '../components/frequently-asked-questions.astro';
-import ImpactHeader from '../components/impact-header.astro';
-import LetMeExplain from '../components/let-me-explain.astro';
-import Metrics from '../components/metrics.astro';
-import Plans from '../components/plans.astro';
-import WhoAmI from '../components/who-am-i.astro';
-import WhyMe from '../components/why-me.astro';
-import Layout from '../layouts/Layout.astro';
-
-import { TailwindIndicator } from '@/components/tailwind-indicator';
-import { TestimonialsSection } from '@/components/testimonials-section';
-import Hero from '../components/hero.astro';
-import '../styles/global.css';
+import FormContact from "@/components/form-contact.astro";
+import { TailwindIndicator } from "@/components/tailwind-indicator";
+import { TestimonialsSection } from "@/components/testimonials-section";
+import Clients from "../components/clients.astro";
+import Footer from "../components/footer.astro";
+import FrequentlyAskedQuestions from "../components/frequently-asked-questions.astro";
+import Hero from "../components/hero.astro";
+import ImpactHeader from "../components/impact-header.astro";
+import LetMeExplain from "../components/let-me-explain.astro";
+import Metrics from "../components/metrics.astro";
+import Plans from "../components/plans.astro";
+import WhoAmI from "../components/who-am-i.astro";
+import WhyMe from "../components/why-me.astro";
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -29,10 +29,8 @@ import '../styles/global.css';
   <LetMeExplain
     className="max-w-[1629px] mx-auto w-full mb-[116px] md:mb-[120px]"
   />
-  <Plans className="mb-[116px] md:mb-[120px] pt-20" />
-  <!-- <div class="-mt-[116px]"> -->
-  <!-- <FormContact /> -->
-  <!-- </div> -->
+  <Plans className="pt-20" />
+  <FormContact />
   <WhoAmI className="mb-[116px] md:mb-[120px]" />
   <WhyMe className="mb-[116px] md:mb-[120px] max-w-[1620px] mx-auto" />
   <TestimonialsSection className="mb-[116px] md:mb-[120px]" />
