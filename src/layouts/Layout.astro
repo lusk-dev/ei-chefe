@@ -1,17 +1,102 @@
+---
+import GTM from '@/components/gtm.astro';
+import MetaPixel from '@/components/meta-pixel.astro';
+---
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Preconnect para Performance -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://connect.facebook.net" />
+
+    <!-- Favicon (considere adicionar mais formatos) -->
+    <link
+      rel="icon"
+      type="image/webp"
+      sizes="32x32"
+      href="/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      sizes="16x16"
+      href="/favicon-16x16.png"
+    />
+
+    <!-- SEO Básico -->
+    <title>Ei Chefe Ads | Luanderson Tráfego Pago</title>
+    <meta
+      name="description"
+      content="Ei, Chefe Ads é um serviço premium de gestão de tráfego pago, voltado para clientes exigentes que desejam aumentar vendas e otimizar a performance das campanhas."
+    />
+    <meta
+      name="keywords"
+      content="tráfego pago, gestão de anúncios, marketing digital, google ads, facebook ads"
+    />
+    <meta name="author" content="Luanderson" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <link rel="canonical" href="https://eichefeads.com.br/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:url" content="https://eichefeads.com.br/" />
+    <meta
+      property="og:site_name"
+      content="Ei Chefe Ads | Luanderson Tráfego Pago"
+    />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Ei Chefe Ads | Luanderson Tráfego Pago"
+    />
+    <meta
+      property="og:description"
+      content="Ei, Chefe Ads é um serviço premium de gestão de tráfego pago, voltado para clientes exigentes que desejam aumentar vendas e otimizar a performance das campanhas."
+    />
+    <meta property="fb:pages" content="" />
+    <meta property="fb:admins" content="" />
+    <meta property="fb:app_id" content="" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Ei Chefe Ads | Luanderson Tráfego Pago"
+    />
+    <meta
+      name="twitter:description"
+      content="Ei, Chefe Ads é um serviço premium de gestão de tráfego pago, voltado para clientes exigentes que desejam aumentar vendas e otimizar a performance das campanhas."
+    />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="" />
+
+    <!-- Fontes -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <title>Ei Chefe</title>
+
+    <!-- RSS Feed -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Feed para Ei Chefe Ads | Luanderson Tráfego Pago »"
+      href="https://eichefeads.com.br/feed/"
+    />
+
+    <!-- Generator -->
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Analytics -->
+    <GTM gtmId="GTM-MFF3R8H/" />
+    <MetaPixel pixelId="640767321129181" />
   </head>
   <body>
     <slot />
@@ -24,6 +109,6 @@
     margin: 0;
     width: 100%;
     height: 100%;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 </style>
