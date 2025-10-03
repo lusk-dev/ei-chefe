@@ -1,7 +1,7 @@
 ---
 import FormContact from '@/components/form-contact.astro';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
-import { TestimonialsSection } from '@/components/testimonials-section';
+import TestimonialsSection from '@/components/testimonials-section.astro';
 import Clients from '../components/clients.astro';
 import Footer from '../components/footer.astro';
 import FrequentlyAskedQuestions from '../components/frequently-asked-questions.astro';
@@ -13,7 +13,6 @@ import Plans from '../components/plans.astro';
 import WhoAmI from '../components/who-am-i.astro';
 import WhyMe from '../components/why-me.astro';
 import Layout from '../layouts/Layout.astro';
-import '../styles/global.css';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -38,5 +37,5 @@ import '../styles/global.css';
     className="mb-[116px] md:mb-[120px] max-w-[1620px] mx-auto"
   />
   <Footer />
-  <TailwindIndicator />
+  <TailwindIndicator client:only="react" />
 </Layout>
