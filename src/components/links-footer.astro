@@ -1,30 +1,21 @@
 ---
-import instagram from "../assets/logos/instagram.svg";
-import facebook from "../assets/logos/facebook.svg";
-import be from "../assets/logos/be.svg";
-import dribble from "../assets/logos/dribble.svg";
+import InstagramIcon from 'simple-icons-astro/Instagram';
+import XIcon from 'simple-icons-astro/X';
+import YouTubeIcon from 'simple-icons-astro/Youtube';
 
 const links = [
   {
-    href: "https://www.facebook.com/eichefe/",
-    src: facebook.src,
-    alt: "Facebook",
+    href: 'https://www.instagram.com/eiluanderson/',
+    icon: InstagramIcon
   },
   {
-    href: "https://www.instagram.com/eiluanderson/",
-    src: instagram.src,
-    alt: "Instagram",
+    href: ' https://x.com/eiluanderson',
+    icon: XIcon
   },
   {
-    href: "https://www.dribble.com/eichefe/",
-    src: dribble.src,
-    alt: "dribble",
-  },
-  {
-    href: "https://www.be.com/eichefe/",
-    src: be.src,
-    alt: "be",
-  },
+    href: 'https://youtube.com/@eiluanderson',
+    icon: YouTubeIcon
+  }
 ];
 ---
 
@@ -34,13 +25,13 @@ const links = [
   >
   <div class="flex gap-[5px]">
     {
-      links.map((link) => (
+      links.map(link => (
         <a
           href={link.href}
           target="_blank"
           class="p-4 rounded-full border border-white/20"
         >
-          <img src={link.src} alt={link.alt} />
+          <link.icon class="w-3.5 h-3.5 text-white" />
         </a>
       ))
     }

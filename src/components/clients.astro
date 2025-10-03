@@ -4,6 +4,7 @@ interface Props {
 }
 
 import { cn } from '@/lib/utils';
+import { Image } from 'astro:assets';
 import autonoveLogo from '../assets/logos/autonove-logo.png';
 import donutsLogo from '../assets/logos/donuts.png';
 import giaiLogo from '../assets/logos/gai-logo.png';
@@ -29,13 +30,13 @@ const { className } = Astro.props;
     </h2>
   </div>
   <div
-    class="max-w-[1620px] mx-auto grid md:grid-cols-2 md:auto-cols-[510px] xl:grid-cols-3 gap-10"
+    class="max-w-[1620px] mx-auto grid grid-cols-1 md:grid-cols-2 md:auto-cols-[510px] xl:grid-cols-3 gap-10"
   >
     <div class="space-y-8">
-      <img
-        src={donutsLogo.src}
+      <Image
+        src={donutsLogo}
         alt=""
-        class="min-w-[360px] w-full h-[360px] rounded-3xl max-w-[510px]"
+        class="w-full h-[360px] rounded-3xl max-w-[510px]"
       />
       <div class="space-y-2">
         <h3
@@ -57,11 +58,12 @@ const { className } = Astro.props;
       </div>
     </div>
     <div class="space-y-8">
-      <img
-        src={autonoveLogo.src}
+      <Image
+        src={autonoveLogo}
         alt=""
-        class="min-w-[360px] w-full h-[360px] rounded-3xl max-w-[510px]"
+        class="w-full h-[360px] rounded-3xl max-w-[510px]"
       />
+
       <div class="space-y-2">
         <h3
           class="text-[#777777] text-[32px] font-normal leading-[100%] italic"
@@ -84,10 +86,10 @@ const { className } = Astro.props;
       </div>
     </div>
     <div class="space-y-8">
-      <img
-        src={giaiLogo.src}
+      <Image
+        src={giaiLogo}
         alt=""
-        class="min-w-[360px] w-full h-[360px] rounded-3xl max-w-[510px]"
+        class="w-full h-[360px] rounded-3xl max-w-[510px]"
       />
       <div class="space-y-2">
         <h3
