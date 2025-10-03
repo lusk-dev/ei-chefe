@@ -18,7 +18,14 @@ import '../styles/global.css';
       rel="preload"
       as="style"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      /></noscript
+    >
     <link
       rel="preload"
       as="image"
@@ -92,11 +99,7 @@ import '../styles/global.css';
     <meta name="twitter:site" content="" />
     <meta name="twitter:creator" content="" />
 
-    <!-- Fontes -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Fontes removidas - carregadas via preload otimizado acima -->
 
     <!-- RSS Feed -->
     <link

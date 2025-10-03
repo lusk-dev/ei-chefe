@@ -1,0 +1,23 @@
+# Cache para assets estáticos (1 ano)
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache para JS/CSS com versionamento (1 ano)
+/_astro/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/_astro/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML sem cache (sempre validar)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Página principal
+/
+  Cache-Control: public, max-age=0, must-revalidate
+  Link: <https://fonts.googleapis.com>; rel=preconnect
+  Link: <https://fonts.gstatic.com>; rel=preconnect; crossorigin
