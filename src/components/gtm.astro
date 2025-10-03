@@ -7,17 +7,35 @@ const { gtmId } = Astro.props;
 ---
 
 <script is:inline define:vars={{ gtmId }}>
-  // Defer GTM loading até após load para não bloquear FCP/LCP
-  window.addEventListener('load', function() {
-    (function (w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', gtmId);
-  });
+  // Lazy load GTM após interação do usuário ou timeout
+  (function() {
+    var loaded = false;
+
+    function loadGTM() {
+      if (loaded) return;
+      loaded = true;
+
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.defer = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', gtmId);
+    }
+
+    // Carregar após 3s de inatividade ou primeira interação
+    var timeout = setTimeout(loadGTM, 3000);
+
+    ['mousedown', 'touchstart', 'scroll'].forEach(function(event) {
+      window.addEventListener(event, function() {
+        clearTimeout(timeout);
+        loadGTM();
+      }, { once: true, passive: true });
+    });
+  })();
 </script>

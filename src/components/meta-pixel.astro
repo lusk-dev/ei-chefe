@@ -6,35 +6,53 @@ const { pixelId } = Astro.props;
 ---
 
 <script is:inline define:vars={{ pixelId }}>
-  // Defer Meta Pixel loading até após load para não bloquear FCP/LCP
-  window.addEventListener('load', function() {
-    !(function (f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function () {
-        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = !0;
-      n.version = '2.0';
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = !0;
-      t.src = v;
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    })(
-      window,
-      document,
-      'script',
-      'https://connect.facebook.net/en_US/fbevents.js'
-    );
+  // Lazy load Meta Pixel após interação do usuário ou timeout
+  (function() {
+    var loaded = false;
 
-    var url = window.location.origin + '?ob=open-bridge';
-    fbq('init', pixelId, {}, { agent: 'wordpress-6.8.1-4.0.1' });
-    fbq('track', 'PageView');
-    fbq('set', 'openbridge', pixelId, url);
-  });
+    function loadFBPixel() {
+      if (loaded) return;
+      loaded = true;
+
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        t.defer = true;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        'script',
+        'https://connect.facebook.net/en_US/fbevents.js'
+      );
+
+      var url = window.location.origin + '?ob=open-bridge';
+      fbq('init', pixelId, {}, { agent: 'wordpress-6.8.1-4.0.1' });
+      fbq('track', 'PageView');
+      fbq('set', 'openbridge', pixelId, url);
+    }
+
+    // Carregar após 3s de inatividade ou primeira interação
+    var timeout = setTimeout(loadFBPixel, 3000);
+
+    ['mousedown', 'touchstart', 'scroll'].forEach(function(event) {
+      window.addEventListener(event, function() {
+        clearTimeout(timeout);
+        loadFBPixel();
+      }, { once: true, passive: true });
+    });
+  })();
 </script>
 <!-- Meta Pixel Code -->
 <noscript>

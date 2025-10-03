@@ -5,6 +5,9 @@
 /*.woff2
   Cache-Control: public, max-age=31536000, immutable
 
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
 # Cache para JS/CSS com versionamento (1 ano)
 /_astro/*.js
   Cache-Control: public, max-age=31536000, immutable
@@ -12,12 +15,19 @@
 /_astro/*.css
   Cache-Control: public, max-age=31536000, immutable
 
+# Cache para scripts de terceiros (1 hora)
+/en_US/fbevents.js
+  Cache-Control: public, max-age=3600
+
 # HTML sem cache (sempre validar)
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
-# Página principal
+# Página principal com resource hints
 /
   Cache-Control: public, max-age=0, must-revalidate
   Link: <https://fonts.googleapis.com>; rel=preconnect
   Link: <https://fonts.gstatic.com>; rel=preconnect; crossorigin
+  Link: <https://connect.facebook.net>; rel=preconnect
+  Link: <https://www.googletagmanager.com>; rel=preconnect
+  Link: <https://www.facebook.com>; rel=dns-prefetch
