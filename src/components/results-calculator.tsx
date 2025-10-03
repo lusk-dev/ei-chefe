@@ -148,9 +148,14 @@ export function ResultsCalculator() {
 
           {/* Conversion Rate Slider */}
           <div className="flex flex-col gap-3">
-            <label className="block text-white text-base font-light">
-              Taxa De Conversão Em Clientes
-            </label>
+            <div className="flex justify-between items-center">
+              <label className="block text-white text-base font-light">
+                Taxa De Conversão Em Clientes
+              </label>
+              <span className="text-white text-sm font-medium">
+                {conversionRate.toFixed(1)}%
+              </span>
+            </div>
             <div className="relative">
               <div className="slider-container">
                 <div className="slider-track">
