@@ -5,47 +5,36 @@ interface Props {
 const { pixelId } = Astro.props;
 ---
 
-<script is:inline define:vars={{ pixelId: pixelId }}>
-  !(function (f, b, e, v, n, t, s) {
-    if (f.fbq) return;
-    n = f.fbq = function () {
-      n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-    };
-    if (!f._fbq) f._fbq = n;
-    n.push = n;
-    n.loaded = !0;
-    n.version = '2.0';
-    n.queue = [];
-    t = b.createElement(e);
-    t.async = !0;
-    t.src = v;
-    s = b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t, s);
-  })(
-    window,
-    document,
-    'script',
-    'https://connect.facebook.net/en_US/fbevents.js'
-  );
-  fbq('init', pixelId);
-  fbq('track', 'PageView');
-  fbq('set', 'openbridge', '640767321129181', url);
-</script>
-<script type="text/javascript">
-  var url = window.location.origin + '?ob=open-bridge';
-  fbq('set', 'openbridge', '640767321129181', url);
-</script>
-<script type="text/javascript">
-  fbq(
-    'init',
-    '640767321129181',
-    {},
-    {
-      agent: 'wordpress-6.8.1-4.0.1'
-    }
-  );
-</script><script type="text/javascript">
-  fbq('track', 'PageView', []);
+<script is:inline define:vars={{ pixelId }}>
+  // Defer Meta Pixel loading até após load para não bloquear FCP/LCP
+  window.addEventListener('load', function() {
+    !(function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(
+      window,
+      document,
+      'script',
+      'https://connect.facebook.net/en_US/fbevents.js'
+    );
+
+    var url = window.location.origin + '?ob=open-bridge';
+    fbq('init', pixelId, {}, { agent: 'wordpress-6.8.1-4.0.1' });
+    fbq('track', 'PageView');
+    fbq('set', 'openbridge', pixelId, url);
+  });
 </script>
 <!-- Meta Pixel Code -->
 <noscript>
