@@ -31,7 +31,7 @@ export function TestimonialsSection({
   ...props
 }: TestimonialsSectionProps) {
   return (
-    <section className={cn('py-20 px-4 bg-background', className)} {...props}>
+    <section className={cn('py-20 px-4 bg-background mb-[116px] md:mb-[120px]', className)} {...props}>
       <div className="max-w-7xl mx-auto">
         <h2 className="italic font-light text-[48px] leading-[120%] text-black mb-14 text-center">
           O que os clientes falam
@@ -47,6 +47,7 @@ export function TestimonialsSection({
                   title={`Depoimento de ${testimonial.name}`}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
+                  loading='lazy'
                   className="absolute inset-0 w-full h-full"
                 />
               </div>

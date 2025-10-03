@@ -31,12 +31,30 @@ const { pixelId } = Astro.props;
   fbq('track', 'PageView');
   fbq('set', 'openbridge', '640767321129181', url);
 </script>
+<script type="text/javascript">
+  var url = window.location.origin + '?ob=open-bridge';
+  fbq('set', 'openbridge', '640767321129181', url);
+</script>
+<script type="text/javascript">
+  fbq(
+    'init',
+    '640767321129181',
+    {},
+    {
+      agent: 'wordpress-6.8.1-4.0.1'
+    }
+  );
+</script><script type="text/javascript">
+  fbq('track', 'PageView', []);
+</script>
+<!-- Meta Pixel Code -->
 <noscript>
   <img
     height="1"
     width="1"
     style="display:none"
     alt="fbpx"
-    src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}
+    src="https://www.facebook.com/tr?id=640767321129181&ev=PageView&noscript=1"
   />
 </noscript>
+<!-- End Meta Pixel Code -->

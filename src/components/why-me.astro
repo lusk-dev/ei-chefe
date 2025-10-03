@@ -11,7 +11,10 @@ import meetingImg from '../assets/meeting.png';
 const { className } = Astro.props;
 ---
 
-<div class={cn('px-4 flex flex-col gap-14 lg:flex-row ', className)}>
+<div
+  class={cn('px-4 flex flex-col gap-14 lg:flex-row ', className)}
+  id="myWork"
+>
   <div class="flex flex-col gap-4 max-w-[696px] w-full">
     <h2 class="italic font-light text-[48px] leading-[120%] text-black">
       Por que deveria contratar meu serviço para sua empresa
@@ -71,7 +74,7 @@ const { className } = Astro.props;
       <Image
         src={meetingImg}
         alt=""
-        class="rounded-[20px] max-w-[362px] w-full h-[437.2799987792969px] object-cover object-top"
+        class="rounded-[20px] w-auto max-w-[362px] h-[437.2799987792969px] object-cover object-top"
       />
     </div>
     <div
