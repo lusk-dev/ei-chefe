@@ -97,35 +97,39 @@ export function ResultsCalculator() {
         <div className="space-y-6">
           {/* Investment Input */}
           <div className="flex flex-col gap-3">
-            <label className="block text-white text-base font-light">
+            <label htmlFor="investment-input" className="block text-white text-base font-light">
               Quanto Pretende Investir Por Mês?
             </label>
 
             <div className="flex items-center gap-3 bg-transparent border border-white/30 rounded-full px-4 py-3 text-white focus-within:border-white/50 transition-colors">
               <Clock className="w-5 h-5 flex-shrink-0 text-white/60" />
               <input
+                id="investment-input"
                 type="text"
                 className="w-full bg-transparent outline-none text-white placeholder-white/40 text-base"
                 placeholder="R$ 0"
                 value={investment ? formatCurrency(investment) : ''}
                 onChange={handleInvestmentChange}
+                aria-label="Valor do investimento mensal"
               />
             </div>
           </div>
 
           {/* Business Type Select */}
           <div className="flex flex-col gap-3">
-            <label className="block text-white text-base font-light">
+            <label htmlFor="business-type-select" className="block text-white text-base font-light">
               Qual Seu Tipo De Negócio?
             </label>
             <div className="relative">
               <select
+                id="business-type-select"
                 className="w-full bg-transparent border border-white/30 rounded-full px-4 py-3 pr-12 text-white focus:outline-none focus:border-white/50 appearance-none transition-colors text-base"
                 value={businessType}
                 onChange={e => {
                   setBusinessType(e.target.value as BusinessType);
                   setUserModifiedRate(false);
                 }}
+                aria-label="Tipo de negócio"
               >
                 <option value="" className="bg-[#1A1A2E] text-white">
                   Selecione
@@ -140,7 +144,7 @@ export function ResultsCalculator() {
                   Outro
                 </option>
               </select>
-              <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
+              <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none" aria-hidden="true">
                 <ChevronDown className="w-5 h-5 text-white/60" />
               </div>
             </div>
@@ -149,16 +153,16 @@ export function ResultsCalculator() {
           {/* Conversion Rate Slider */}
           <div className="flex flex-col gap-3">
             <div className="flex justify-between items-center">
-              <label className="block text-white text-base font-light">
+              <label htmlFor="conversion-rate-slider" className="block text-white text-base font-light">
                 Taxa De Conversão Em Clientes
               </label>
-              <span className="text-white text-sm font-medium">
+              <span className="text-white text-sm font-medium" aria-live="polite">
                 {conversionRate.toFixed(1)}%
               </span>
             </div>
             <div className="relative">
               <div className="slider-container">
-                <div className="slider-track">
+                <div className="slider-track" aria-hidden="true">
                   <div
                     className="slider-fill"
                     style={{ width: `${conversionRate}%` }}
@@ -169,6 +173,7 @@ export function ResultsCalculator() {
                   ></div>
                 </div>
                 <input
+                  id="conversion-rate-slider"
                   type="range"
                   min="0"
                   max="100"
@@ -176,6 +181,11 @@ export function ResultsCalculator() {
                   value={conversionRate}
                   onChange={handleConversionRateChange}
                   className="slider-input"
+                  aria-label="Taxa de conversão em porcentagem"
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-valuenow={conversionRate}
+                  aria-valuetext={`${conversionRate.toFixed(1)} porcento`}
                 />
               </div>
             </div>
@@ -205,7 +215,9 @@ export function ResultsCalculator() {
           <a
             href="https://bit.ly/wpp-eichefe-ads"
             target="_blank"
+            rel="noopener noreferrer"
             className="block w-full bg-[#2A25A6] hover:bg-[#3530B8] text-white py-4 rounded-full font-medium transition-colors text-base text-center mt-6"
+            aria-label="Fale com um especialista em tráfego pago via WhatsApp"
           >
             Fale com um Especialista
           </a>

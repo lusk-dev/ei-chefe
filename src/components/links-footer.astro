@@ -6,15 +6,18 @@ import YouTubeIcon from 'simple-icons-astro/Youtube';
 const links = [
   {
     href: 'https://www.instagram.com/eiluanderson/',
-    icon: InstagramIcon
+    icon: InstagramIcon,
+    label: 'Siga-nos no Instagram'
   },
   {
-    href: ' https://x.com/eiluanderson',
-    icon: XIcon
+    href: 'https://x.com/eiluanderson',
+    icon: XIcon,
+    label: 'Siga-nos no X (Twitter)'
   },
   {
     href: 'https://youtube.com/@eiluanderson',
-    icon: YouTubeIcon
+    icon: YouTubeIcon,
+    label: 'Inscreva-se no YouTube'
   }
 ];
 ---
@@ -29,7 +32,9 @@ const links = [
         <a
           href={link.href}
           target="_blank"
+          rel="noopener noreferrer"
           class="p-4 rounded-full border border-white/20"
+          aria-label={link.label}
         >
           <link.icon class="w-3.5 h-3.5 text-white" />
         </a>
