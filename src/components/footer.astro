@@ -13,9 +13,9 @@ const { className } = Astro.props;
 
 <footer
   class={cn('px-6 py-20 rounded-t-[40px]', className)}
-  style={`background-image: url(${bgFooter.src}); background-size: cover;`}
+  style={`background-image: url(${bgFooter.src}); background-size: cover; background-position-y: center;`}
 >
-  <div class="max-w-[1320px] mx-auto">
+  <div class="max-w-[1320px] mx-auto space-y-[52px]">
     <div class="flex flex-col gap-2">
       <img src={eiChefeLogo.src} alt="eiChefe Logo" width="163" height="53" />
       <div class="flex flex-col gap-4">
@@ -36,7 +36,7 @@ const { className } = Astro.props;
       </div>
     </div>
     <div
-      class="p-[50px] flex flex-col gap-[10px] lg:flex-row lg:justify-between"
+      class="p-[50px] flex flex-col gap-[10px] lg:flex-row lg:justify-between bg-white/[12%] rounded-[40px]"
     >
       <div>
         <div class="font-normal leading-[24px] text-base text-[#999]">
