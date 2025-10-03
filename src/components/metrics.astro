@@ -4,6 +4,7 @@ interface Props {
 }
 
 import { cn } from '@/lib/utils';
+import { Image } from 'astro:assets';
 import bgCard from '../assets/bg-card.png';
 import donutChart from '../assets/donut-chart.svg';
 import logosSocial from '../assets/logos-social.svg';
@@ -27,7 +28,7 @@ const { className } = Astro.props;
   >
     <div
       class="py-[32.5px] px-[30px] h-[500px] flex flex-col gap-4 rounded-[30px]"
-      style={`background-image: url(${bgCard.src});`}
+      style={`background-image: url(${bgCard.src}); background-size: cover; background-position: center;`}
     >
       <p class="text-[#DDD] text-[32px] leading-[120%] font-normal">
         No Brasil, <br /><span class="text-[40px] font-bold">
@@ -44,11 +45,7 @@ const { className } = Astro.props;
         >
           O que representa 80% da população ativa, estão nas redes sociais.
         </p>
-        <img
-          src={donutChart.src}
-          alt="Donut Chart"
-          class="w-[210px] h-[203px]"
-        />
+        <Image src={donutChart} alt="Donut Chart" class="w-[210px] h-[203px]" />
       </div>
     </div>
 
@@ -61,7 +58,7 @@ const { className } = Astro.props;
     <div
       class="py-[64px] px-[30px] text-black text-2xl font-normal leading-[120%] bg-white space-y-[18px] h-[500px] rounded-[30px] md:text-[32px] md:leading-[36px]"
     >
-      <img src={logosSocial.src} alt="" />
+      <Image src={logosSocial} alt="" />
       <p>
         Através do tráfego pago, coloco sua empresa na frente dos clientes
         certos, no momento exato da compra. Isso resulta em mais vendas e
