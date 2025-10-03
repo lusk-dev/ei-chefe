@@ -1,5 +1,5 @@
-import { Clock, ChevronDown } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { ChevronDown, Clock } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 type BusinessType = 'medico' | 'restaurante' | 'outro' | '';
 
@@ -11,16 +11,16 @@ interface BusinessConfig {
 const BUSINESS_CONFIGS: Record<Exclude<BusinessType, ''>, BusinessConfig> = {
   medico: {
     costPerContact: 10,
-    defaultConversionRate: 1.5,
+    defaultConversionRate: 1.5
   },
   restaurante: {
     costPerContact: 2,
-    defaultConversionRate: 15,
+    defaultConversionRate: 15
   },
   outro: {
     costPerContact: 5,
-    defaultConversionRate: 10,
-  },
+    defaultConversionRate: 10
+  }
 };
 
 export function ResultsCalculator() {
@@ -45,7 +45,9 @@ export function ResultsCalculator() {
     }
 
     const config = BUSINESS_CONFIGS[businessType];
-    const estimatedContacts = Math.floor(investmentValue / config.costPerContact);
+    const estimatedContacts = Math.floor(
+      investmentValue / config.costPerContact
+    );
     const newClients = Math.floor(estimatedContacts * (conversionRate / 100));
 
     return { estimatedContacts, newClients };
@@ -65,11 +67,13 @@ export function ResultsCalculator() {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
       currency: 'BRL',
-      minimumFractionDigits: 0,
+      minimumFractionDigits: 0
     }).format(numValue);
   };
 
-  const handleConversionRateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleConversionRateChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setUserModifiedRate(true);
     setConversionRate(parseFloat(e.target.value));
   };
@@ -86,8 +90,8 @@ export function ResultsCalculator() {
           Projete seus Resultados
         </h3>
         <p className="text-white/70 text-sm mb-8 text-center leading-relaxed">
-          Veja uma estimativa de quantos novos clientes você pode alcançar com base no seu
-          investimento em anúncios.
+          Veja uma estimativa de quantos novos clientes você pode alcançar com
+          base no seu investimento em anúncios.
         </p>
 
         <div className="space-y-6">
@@ -118,7 +122,7 @@ export function ResultsCalculator() {
               <select
                 className="w-full bg-transparent border border-white/30 rounded-full px-4 py-3 pr-12 text-white focus:outline-none focus:border-white/50 appearance-none transition-colors text-base"
                 value={businessType}
-                onChange={(e) => {
+                onChange={e => {
                   setBusinessType(e.target.value as BusinessType);
                   setUserModifiedRate(false);
                 }}
@@ -145,7 +149,7 @@ export function ResultsCalculator() {
           {/* Conversion Rate Slider */}
           <div className="flex flex-col gap-3">
             <label className="block text-white text-base font-light">
-              Taxa De Conversão Em Clientes ({conversionRate.toFixed(1)}%)
+              Taxa De Conversão Em Clientes
             </label>
             <div className="relative">
               <div className="slider-container">
@@ -175,7 +179,9 @@ export function ResultsCalculator() {
           {/* Results Display */}
           <div className="space-y-4 pt-2">
             <div className="flex justify-between items-center">
-              <span className="text-white text-base font-light">Novos Clientes Por Mês</span>
+              <span className="text-white text-base font-light">
+                Novos Clientes Por Mês
+              </span>
               <span className="text-[#5B56E8] font-semibold text-xl">
                 {newClients !== null ? newClients : '--'}
               </span>

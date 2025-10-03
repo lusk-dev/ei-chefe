@@ -4,7 +4,6 @@ interface Props {
 }
 
 import { cn } from '@/lib/utils';
-import bgPlanCard from '../assets/bg-plan-card.png';
 
 import ChevronRightIcon from '@lucide/astro/icons/chevron-right';
 
@@ -54,119 +53,184 @@ const { className } = Astro.props;
     </div>
     <div class="gap-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
       <div
-        class="bg-[#F3F3F3] p-6 rounded-[30px] flex flex-col justify-between"
+        class="bg-[#F3F3F3] p-8 rounded-[30px] flex flex-col justify-between gap-8"
       >
-        <div>
-          <h3
-            class="font-light italic text-[40px] leading-[100%] text-black mb-6"
-          >
-            Quero começar,
-            <span class="font-medium text-[48px]">Chefe</span>
+        <div class="space-y-6">
+          <h3 class="text-black leading-tight">
+            <span class="font-light italic text-[40px] block"
+              >Quero começar,</span
+            >
+            <span class="font-bold text-[48px] block">Chefe</span>
           </h3>
-          <div class="font-medium text-[20px] leading-[150%] text-[#292D38]">
-            <span class="leading-[115.99999999999999%] text-[#3219CA] font-bold"
-              >Planejamento Análise de Dados Planejamento de Crescimento
-            </span>
-            <br />
-            <br />
-            <ul>
-              <span class="font-bold">Análise de posicionamento de marca </span>
-              <li class="list-disc ml-6">Sugestão para conteúdos.</li>
-              <li class="list-disc ml-6">Sugestões de edições de videos.</li>
-              <li class="list-disc ml-6">
-                Sugestão para landing pages (páginas de alta conversão)
-              </li>
-            </ul>
+
+          <div class="space-y-4">
+            <div class="space-y-1">
+              <p class="font-bold text-[#3219CA] text-xl">Planejamento</p>
+              <p class="font-bold text-[#3219CA] text-xl">Análise de Dados</p>
+              <p class="font-bold text-[#3219CA] text-xl">
+                Planejamento de Crescimento
+              </p>
+            </div>
+
+            <div class="space-y-3">
+              <p class="font-bold text-[#292D38] text-lg">
+                Análise de posicionamento de marca
+              </p>
+              <ul class="space-y-2 text-[#292D38] text-base font-normal">
+                <li class="flex items-start gap-2">
+                  <span class="text-[#292D38]/60 mt-1">•</span>
+                  <span>Sugestão para conteúdos</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#292D38]/60 mt-1">•</span>
+                  <span>Sugestões de edições de vídeos</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#292D38]/60 mt-1">•</span>
+                  <span
+                    >Sugestão para landing pages (páginas de alta conversão)</span
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
+
         <div
-          class="py-6 px-[31px] bg-[#151515] border border-[#212529] rounded-[100px] text-white leading-[120%] text-base"
+          class="lg:py-[26px] lg:px-[51px] px-[31px] py-4 bg-[#151515] hover:bg-[#252525] transition-colors rounded-full text-white text-lg font-medium text-center"
         >
           Investimento em anúncios até R$2.500/mês
         </div>
       </div>
       <div
-        class="bg-[#F3F3F3] p-6 rounded-[30px] flex flex-col justify-between"
+        class="bg-[#F3F3F3] p-8 rounded-[30px] flex flex-col justify-between gap-8"
       >
-        <div>
-          <h3
-            class="font-light italic text-[40px] leading-[100%] text-black mb-6"
-          >
-            Bora aumentar,
-            <span class="font-medium text-[48px]"> Chefe </span>
+        <div class="space-y-6">
+          <h3 class="text-black leading-tight">
+            <span class="font-light italic text-[40px] block"
+              >Bora aumentar,</span
+            >
+            <span class="font-bold text-[48px] block">Chefe</span>
           </h3>
-          <div class="font-medium text-[20px] leading-[150%] text-[#292D38]">
-            <span class="leading-[115.99999999999999%] font-bold">
-              Assessoria de mídia paga Tudo do outro modelo +
-            </span>
-            <br />
-            <br />
-            <ul>
-              <span class="font-bold">Assessoria de análise de dados 🔍 </span>
-              <li class="list-disc ml-6">
-                Gestão em multiplataforma de anúncio
-              </li>
-              <li class="list-disc ml-6">Configuração de Tags e Pixels</li>
-              <li class="list-disc ml-6">
-                Análise da velocidade do site realizado trimestral
-              </li>
-              <li class="list-disc ml-6">
-                Estudo dos concorrentes Benchmarking análise do site e anúncios
-                anual
-              </li>
-            </ul>
+
+          <div class="space-y-4">
+            <div class="space-y-1">
+              <p class="font-bold text-[#3219CA] text-xl">
+                Assessoria de mídia paga
+              </p>
+              <p class="font-bold text-[#3219CA] text-xl">
+                Tudo do outro modelo +
+              </p>
+            </div>
+
+            <div class="space-y-3">
+              <p
+                class="font-bold text-[#292D38] text-lg flex items-center gap-2"
+              >
+                Assessoria de análise de dados 🔍
+              </p>
+              <ul class="space-y-2 text-[#292D38] text-base font-normal">
+                <li class="flex items-start gap-2">
+                  <span class="text-[#292D38]/60 mt-1">•</span>
+                  <span>Gestão em multiplataforma de anúncio</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#292D38]/60 mt-1">•</span>
+                  <span>Configuração de Tags e Pixels</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#292D38]/60 mt-1">•</span>
+                  <span>Análise da velocidade do site realizado trimestral</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#292D38]/60 mt-1">•</span>
+                  <span
+                    >Estudo dos concorrentes Benchmarking análise do site e
+                    anúncios anual</span
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
+
         <div
-          class="py-6 px-[31px] bg-[#151515] border border-[#212529] rounded-[100px] text-white leading-[120%] text-base"
+          class="lg:py-[26px] lg:px-[51px] px-[31px] py-4 bg-[#151515] hover:bg-[#252525] transition-colors rounded-full text-white text-lg font-medium text-center"
         >
           Investimento em anúncios até R$2.500/mês
         </div>
       </div>
       <div
-        class="px-[30px] py-10 rounded-[30px] flex flex-col gap-6 border border-[#604EE9]"
-        style={`background: url(${bgPlanCard.src}) no-repeat center; background-size: cover;`}
+        class="px-8 py-10 rounded-[30px] flex flex-col gap-8 border-2 border-[#604EE9] bg-[#0A0A1F] relative overflow-hidden"
       >
-        <h3 class="font-light text-[40px] leading-[100%] text-white">
-          <span class="italic">Quero Evoluir</span>
-          <span class="text-[48px] font-medium"> Modo Especialista </span>
-        </h3>
-        <div class="text-[#F3F3F3] font-medium text-xl leading-[150%]">
-          <span class="font-bold text-[#604EE9]">
-            Assessoria de mídia paga
-            <br />
-            Assessoria de análise de dados
-          </span>
-          <br />
-          <br />
-          <ul>
-            <span class="font-bold">Tudo do outro modelo + </span>
-            <li class="list-disc ml-6">
-              Criação de criativo de imagem com IA (new)
-            </li>
-            <li class="list-disc ml-6">
-              Assessoria de vendas e resultados no processo comercial
-            </li>
-            <li class="list-disc ml-6">
-              Análise da jornada do seu cliente para identificação do ICP
-            </li>
-          </ul>
+        <!-- Gradient overlay concentrated at bottom -->
+        <div
+          class="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-[#604EE9]/40 via-[#604EE9]/10 to-transparent pointer-events-none rounded-[30px]"
+        >
         </div>
-        <div class="flex flex-col gap-2">
+
+        <div class="relative z-10 space-y-8">
+          <!-- Title -->
+          <h3 class="text-white leading-tight">
+            <span class="font-light italic text-[40px] block"
+              >Quero Evoluir</span
+            >
+            <span class="font-bold text-[48px] block"> Modo Especialista </span>
+          </h3>
+
+          <!-- Services -->
+          <div class="text-white space-y-6">
+            <div class="space-y-1">
+              <p class="font-bold text-[#7B6EF6] text-xl">
+                Assessoria de mídia paga
+              </p>
+              <p class="font-bold text-[#7B6EF6] text-xl">
+                Assessoria de análise de dados
+              </p>
+            </div>
+
+            <div class="space-y-3">
+              <p class="font-bold text-lg">Tudo do outro modelo +</p>
+              <ul class="space-y-2 text-base font-normal">
+                <li class="flex items-start gap-2">
+                  <span class="text-white/60 mt-1">•</span>
+                  <span>Criação de criativo de imagem com IA (new)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-white/60 mt-1">•</span>
+                  <span
+                    >Assessoria de vendas e resultados no processo comercial</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-white/60 mt-1">•</span>
+                  <span
+                    >Análise da jornada do seu cliente para identificação do ICP</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Exclusivo badge and text -->
+          <div class="flex items-start gap-4 flex-col xl:flex-row">
+            <div
+              class="bg-[#604EE9] py-3 px-8 rounded-full text-white font-medium text-base shrink-0"
+            >
+              Exclusivo
+            </div>
+            <p class="text-white/90 text-sm leading-[21px]">
+              1 Treinamento de atendimento/vendas com parceiros estratégicos com
+              foco em melhorar a conversão de vendas | ANUAL
+            </p>
+          </div>
+
           <div
-            class="bg-[#604EE9] py-[15px] px-[35px] rounded-[30px] text-white max-w-max"
+            class="lg:py-[26px] lg:px-[51px] px-[31px] py-4 bg-[#604EE9] hover:bg-[#7B6EF6] transition-colors rounded-full text-white font-medium text-lg text-center"
           >
-            Exclusivo
+            Investimento em anúncios até R$5.000/mês
           </div>
-          <p class="text-[#F3F3F3] text-[14px] leading-[21px] font-normal">
-            1 Treinamento de atendimento/vendas com parceiros estratégicos com
-            foco em melhorar a conversão de vendas | ANUAL
-          </p>
-        </div>
-        <div
-          class="py-4 px-[31px] border border-[#BBBBBB] bg-[#3214E3] rounded-[100px] text-[#DDDDDD] font-medium text-base leading-[120%]"
-        >
-          Investimento em anúncios até R$5.000/mês
         </div>
       </div>
     </div>

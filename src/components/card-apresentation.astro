@@ -1,11 +1,12 @@
 ---
+import { MoveUpRight } from '@lucide/astro';
 import { Image } from 'astro:assets';
 import bgCard from '../assets/card.png';
 import luandersonImg from '../assets/luanderson.png';
 ---
 
 <div
-  class="flex flex-col gap-4 p-8 rounded-[20px] max-w-[622px]"
+  class="flex flex-col gap-4 p-8 rounded-[20px] max-w-[622px] mx-auto"
   style=`
     background-image: url(${bgCard.src});
     background-size: cover;
@@ -13,29 +14,41 @@ import luandersonImg from '../assets/luanderson.png';
     background-repeat: no-repeat;
     padding: 2rem;
     border-radius: 10px;
+    width: 100%;
   `
 >
-  <Image src={luandersonImg} alt="" />
-  <div class="space-y-2 text-white">
-    <div class="flex gap-[10px]">
-      <span
-        class="py-[6px] px-[21px] leading-[21px] text-sm font-normal border border-white/20 rounded-[30px]"
-        >Marketing</span
-      >
-      <span
-        class="py-[6px] px-[21px] leading-[21px] text-sm font-normal border border-white/20 rounded-[30px]"
-        >AI</span
-      >
-      <span
-        class="py-[6px] px-[21px] leading-[21px] text-sm font-normal border border-white/20 rounded-[30px]"
-        >Design</span
-      >
+  <div class="flex items-center justify-between gap-4">
+    <Image src={luandersonImg} alt="" class="flex-shrink-0" />
+  </div>
+  <div class="flex items-end justify-between">
+    <div class="space-y-2 text-white">
+      <div class="flex gap-[10px]">
+        <span
+          class="py-[6px] px-[21px] leading-[21px] text-sm font-normal border border-white/20 rounded-[30px]"
+          >Marketing</span
+        >
+        <span
+          class="py-[6px] px-[21px] leading-[21px] text-sm font-normal border border-white/20 rounded-[30px]"
+          >AI</span
+        >
+        <span
+          class="py-[6px] px-[21px] leading-[21px] text-sm font-normal border border-white/20 rounded-[30px]"
+          >Design</span
+        >
+      </div>
+      <div class="flex flex-col gap-1">
+        <h3 class="leading-[48px] text-[40px] font-medium">
+          Luanderson Rodrigues
+        </h3>
+        <p class="text-base leading-[24px] font-normal">eiluanderson</p>
+      </div>
     </div>
-    <div class="flex flex-col gap-1">
-      <h3 class="leading-[48px] text-[40px] font-medium">
-        Luanderson Rodrigues
-      </h3>
-      <p class="text-base leading-[24px] font-normal">eiluanderson</p>
-    </div>
+    <a
+      href="https://bit.ly/wpp-eichefe-ads"
+      target="_blank"
+      class="px-[18px] py-[19.39px] border rounded-full border-white/20 text-white max-w-max"
+    >
+      <MoveUpRight class="size-3.5" />
+    </a>
   </div>
 </div>

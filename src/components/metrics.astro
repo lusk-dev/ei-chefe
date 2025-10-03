@@ -3,10 +3,10 @@ interface Props {
   className?: string;
 }
 
+import RadialChart from '@/assets/donut-chart.svg';
 import { cn } from '@/lib/utils';
 import { Image } from 'astro:assets';
 import bgCard from '../assets/bg-card.png';
-import donutChart from '../assets/donut-chart.svg';
 import logosSocial from '../assets/logos-social.svg';
 
 const { className } = Astro.props;
@@ -39,13 +39,13 @@ const { className } = Astro.props;
           DE PESSOAS estão <br />nas redes sociais.
         </span>
       </p>
-      <div class="flex flex-col gap-4 md:flex-row">
+      <div class="flex flex-col gap-4 md:flex-row md:items-center">
         <p
           class="text-base text-[#DDD] font-normal md:text-[20px] leading-[120%]"
         >
           O que representa 80% da população ativa, estão nas redes sociais.
         </p>
-        <Image src={donutChart} alt="Donut Chart" class="w-[210px] h-[203px]" />
+        <Image src={RadialChart} alt="Radial Chart" />
       </div>
     </div>
 
