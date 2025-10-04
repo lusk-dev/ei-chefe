@@ -3,7 +3,11 @@ import { MoveUpRight } from '@lucide/astro';
 import { Image } from 'astro:assets';
 import bgCard from '../assets/card.webp';
 import luandersonImg from '../assets/luanderson.webp';
+
+const { className = '' } = Astro.props;
 ---
+
+<link rel="preload" as="image" href={bgCard.src} fetchpriority="high" />
 
 <div
   class="flex flex-col gap-4 p-8 rounded-[20px] max-w-[622px] mx-auto"
