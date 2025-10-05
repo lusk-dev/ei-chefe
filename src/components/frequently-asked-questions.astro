@@ -4,7 +4,6 @@ interface Props {
 }
 
 import { cn } from '@/lib/utils';
-import Point from '../assets/point.svg';
 const { className } = Astro.props;
 ---
 
@@ -13,7 +12,7 @@ const { className } = Astro.props;
     <div
       class="flex items-center px-4 py-2 gap-2 mx-auto bg-[#EFEFEF] max-w-max rounded-[6px]"
     >
-      <img src={Point.src} alt="" />
+      <img src="/images/point.svg" alt="" />
       <span class="text-base font-medium leading-[19.2px]">
         DÚVIDAS DE CLIENTES
       </span>

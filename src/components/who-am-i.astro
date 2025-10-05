@@ -4,10 +4,6 @@ interface Props {
 }
 
 import { cn } from '@/lib/utils';
-import { Image } from 'astro:assets';
-import pillWho from '../assets/piil-who.webp';
-import pillHelp from '../assets/pill-help.webp';
-import pillTe from '../assets/pill-te.webp';
 import CardApresentation from './card-apresentation.astro';
 
 const { className } = Astro.props;
@@ -20,25 +16,25 @@ const { className } = Astro.props;
   )}
 >
   <div class="flex flex-col items-center xl:flex-row max-w-[1440px] w-full">
-    <Image
-      src={pillWho}
+    <img
+      src="/images/piil-who.webp"
       alt=""
-      height={190}
-      width={480}
+      height="190"
+      width="480"
       class="max-w-[480px] w-full max-h-[190px]"
     />
-    <Image
-      src={pillTe}
+    <img
+      src="/images/pill-te.webp"
       alt=""
-      height={190}
-      width={480}
+      height="190"
+      width="480"
       class="max-w-[480px] w-full max-h-[190px]"
     />
-    <Image
-      src={pillHelp}
+    <img
+      src="/images/pill-help.webp"
       alt=""
-      height={190}
-      width={480}
+      height="190"
+      width="480"
       class="max-w-[480px] w-full max-h-[190px]"
     />
   </div>

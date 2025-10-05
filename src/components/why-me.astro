@@ -4,9 +4,6 @@ interface Props {
 }
 
 import { cn } from '@/lib/utils';
-import { Image } from 'astro:assets';
-import attachmentImg from '../assets/attachment.webp';
-import meetingImg from '../assets/meeting.webp';
 
 const { className } = Astro.props;
 ---
@@ -27,11 +24,12 @@ const { className } = Astro.props;
     <div
       class="py-[56px] px-6 bg-black text-white flex flex-col lg:flex-row gap-10 rounded-[40px]"
     >
-      <Image
-        src={attachmentImg}
+      <img
+        src="/images/attachment.webp"
         alt=""
         class="rounded-[20px] lg:max-w-[354px] w-full object-cover"
-        height="437.2799987792969"
+        height="437"
+        loading="lazy"
       />
       <div class="flex flex-col gap-6">
         <h3
@@ -71,10 +69,11 @@ const { className } = Astro.props;
           mídias sociais que proporciona ter bons olhos para novos conteúdos.
         </p>
       </div>
-      <Image
-        src={meetingImg}
+      <img
+        src="/images/meeting.webp"
         alt=""
-        class="rounded-[20px] w-auto max-w-[362px] h-[437.2799987792969px] object-cover object-top"
+        class="rounded-[20px] w-auto max-w-[362px] h-[437px] object-cover object-top"
+        loading="lazy"
       />
     </div>
     <div

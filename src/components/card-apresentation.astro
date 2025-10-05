@@ -1,29 +1,26 @@
 ---
 import { MoveUpRight } from '@lucide/astro';
-import { Image } from 'astro:assets';
-import bgCard from '../assets/card.webp';
-import luandersonImg from '../assets/luanderson.webp';
 
 const { className = '' } = Astro.props;
 ---
 
-<link rel="preload" as="image" href={bgCard.src} fetchpriority="high" />
+<link rel="preload" as="image" href="/images/card.webp" fetchpriority="high" />
 
 <div
   class="flex flex-col gap-4 p-8 rounded-[20px] max-w-[622px] mx-auto"
-  style=`
-    background-image: url(${bgCard.src});
+  style="
+    background-image: url(/images/card.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     padding: 2rem;
     border-radius: 10px;
     width: 100%;
-  `
+  "
 >
   <div class="flex items-center justify-between gap-4">
-    <Image
-      src={luandersonImg}
+    <img
+      src="/images/luanderson.webp"
       alt="Luanderson Rodrigues"
       class="flex-shrink-0"
       loading="eager"

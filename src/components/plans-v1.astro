@@ -4,7 +4,6 @@ interface Props {
 }
 
 import { cn } from '@/lib/utils';
-import bgPlanCard from '../assets/bg-plan-card.webp';
 
 import ChevronRightIcon from '@lucide/astro/icons/chevron-right';
 
@@ -125,7 +124,7 @@ const { className } = Astro.props;
       </div>
       <div
         class="px-[30px] py-10 rounded-[30px] flex flex-col gap-6 border border-[#604EE9]"
-        style={`background: url(${bgPlanCard.src}) no-repeat center; background-size: cover;`}
+        style="background: url(/images/bg-plan-card.webp) no-repeat center; background-size: cover;"
       >
         <h3 class="font-light text-[40px] leading-[100%] text-white">
           <span class="italic">Quero Evoluir</span>

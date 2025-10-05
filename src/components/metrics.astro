@@ -3,11 +3,7 @@ interface Props {
   className?: string;
 }
 
-import RadialChart from '@/assets/donut-chart.svg';
 import { cn } from '@/lib/utils';
-import { Image } from 'astro:assets';
-import bgCard from '../assets/bg-card.webp';
-import logosSocial from '../assets/logos-social.svg';
 
 const { className } = Astro.props;
 ---
@@ -28,7 +24,7 @@ const { className } = Astro.props;
   >
     <div
       class="py-[32.5px] px-[30px] h-[500px] flex flex-col gap-4 rounded-[30px]"
-      style={`background-image: url(${bgCard.src}); background-size: cover; background-position: center;`}
+      style="background-image: url(/images/bg-card.webp); background-size: cover; background-position: center;"
     >
       <p class="text-[#DDD] text-[32px] leading-[120%] font-normal">
         No Brasil, <br /><span class="text-[40px] font-bold">
@@ -45,7 +41,7 @@ const { className } = Astro.props;
         >
           O que representa 80% da população ativa, estão nas redes sociais.
         </p>
-        <Image src={RadialChart} alt="Radial Chart" loading="lazy" />
+        <img src="/images/donut-chart.svg" alt="Radial Chart" loading="lazy" />
       </div>
     </div>
 
@@ -58,7 +54,7 @@ const { className } = Astro.props;
     <div
       class="py-[64px] px-[30px] text-black text-2xl font-normal leading-[120%] bg-white space-y-[18px] h-[500px] rounded-[30px] md:text-[32px] md:leading-[36px]"
     >
-      <Image src={logosSocial} alt="Logos Redes Sociais" loading="lazy" />
+      <img src="/images/logos-social.svg" alt="Logos Redes Sociais" loading="lazy" />
       <p>
         Através do tráfego pago, coloco sua empresa na frente dos clientes
         certos, no momento exato da compra. Isso resulta em mais vendas e

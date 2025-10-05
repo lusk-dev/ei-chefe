@@ -2,8 +2,6 @@
 interface Props {
   className?: string;
 }
-import bgFooter from '../assets/bg-footer.webp';
-import eiChefeLogo from '../assets/logos/ei-chefe-logo.svg';
 
 import { cn } from '@/lib/utils';
 import LinksFooter from './links-footer.astro';
@@ -13,11 +11,11 @@ const { className } = Astro.props;
 
 <footer
   class={cn('px-6 py-20 rounded-t-[40px]', className)}
-  style={`background-image: url(${bgFooter.src}); background-size: cover; background-position-y: center;`}
+  style="background-image: url(/images/bg-footer.webp); background-size: cover; background-position-y: center;"
 >
   <div class="max-w-[1320px] mx-auto space-y-[52px]">
     <div class="flex flex-col gap-2">
-      <img src={eiChefeLogo.src} alt="eiChefe Logo" width="163" height="53" />
+      <img src="/images/logos/ei-chefe-logo.svg" alt="eiChefe Logo" width="163" height="53" />
       <div class="flex flex-col gap-4">
         <div>
           <p
