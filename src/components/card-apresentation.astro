@@ -51,13 +51,29 @@ const { className = '' } = Astro.props;
       </div>
     </div>
     <a
-      href="https://bit.ly/wpp-eichefe-ads"
+      href="https://api.whatsapp.com/send?phone=5588999030508&text=Olá%2C%20quero%20vender%20mais%20com%20anúncios"
       target="_blank"
       rel="noopener noreferrer"
       class="px-[18px] py-[19.39px] border rounded-full border-white/20 text-white max-w-max"
       aria-label="Contatar Luanderson Rodrigues via WhatsApp"
+      onclick="return gtag_report_conversion(this.href);"
     >
       <MoveUpRight class="size-3.5" aria-hidden="true" />
     </a>
   </div>
 </div>
+
+<script is:inline>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-824780487/68QoCPeiz4sYEMfNpIkD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
