@@ -8,6 +8,7 @@ import ChevronRight from '@lucide/astro/icons/chevron-right';
   rel="noopener noreferrer"
   class="px-4 py-2 bg-[#151515] text-white rounded-[30px] flex gap-2 items-center max-w-[225px] font-light text-[14px] leading-[21px] w-full justify-between self-end"
   aria-label="Conversar agora via WhatsApp"
+  onclick="return gtag_report_conversion(this.href);"
 >
   CONVERSAR AGORA
   <div
@@ -17,3 +18,18 @@ import ChevronRight from '@lucide/astro/icons/chevron-right';
     <ChevronRight class="text-[#151515] size-3.5" />
   </div>
 </a>
+
+<script is:inline>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-824780487/68QoCPeiz4sYEMfNpIkD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
