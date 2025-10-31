@@ -28,7 +28,8 @@ function gtag_report_conversion(url) {
   };
   gtag('event', 'conversion', {
       'send_to': 'AW-824780487/68QoCPeiz4sYEMfNpIkD',
-      'event_callback': callback
+      'event_callback': callback,
+      'allow_enhanced_conversions': true
   });
   return false;
 }
