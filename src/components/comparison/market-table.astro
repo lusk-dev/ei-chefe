@@ -1,0 +1,115 @@
+---
+interface Props {
+  className?: string;
+}
+
+import { cn } from '@/lib/utils';
+
+const { className } = Astro.props;
+
+const rows = [
+  {
+    option: 'Depender de indicação',
+    advantage: 'Não exige investimento direto',
+    problem: 'É imprevisível e limita crescimento',
+    fit: 'Quem não tem pressa para crescer',
+    highlight: false,
+  },
+  {
+    option: 'Postar no Instagram',
+    advantage: 'Ajuda na presença digital',
+    problem: 'Sem distribuição, pouca gente vê',
+    fit: 'Quem quer fortalecer marca no longo prazo',
+    highlight: false,
+  },
+  {
+    option: 'Impulsionar posts',
+    advantage: 'Parece simples e rápido',
+    problem: 'Pouco controle, baixa estratégia e dados fracos',
+    fit: 'Ações pontuais e testes básicos',
+    highlight: false,
+  },
+  {
+    option: 'Fazer tráfego sozinho',
+    advantage: 'Economiza honorários',
+    problem: 'Consome tempo e aumenta risco de erro',
+    fit: 'Quem quer aprender e tem tempo disponível',
+    highlight: false,
+  },
+  {
+    option: 'Contratar alguém barato',
+    advantage: 'Custo inicial menor',
+    problem: 'Pode faltar estratégia, análise e visão comercial',
+    fit: 'Negócios com baixo risco e orçamento limitado',
+    highlight: false,
+  },
+  {
+    option: 'Agência genérica',
+    advantage: 'Estrutura maior',
+    problem: 'Atendimento menos personalizado e pouca profundidade no negócio',
+    fit: 'Empresas que precisam de volume operacional',
+    highlight: false,
+  },
+  {
+    option: 'Ei Chefe Ads',
+    advantage: 'Estratégia única, dados e acompanhamento próximo',
+    problem: 'Exige comprometimento e investimento consistente',
+    fit: 'Negócios que querem vender mais com previsibilidade',
+    highlight: true,
+  },
+];
+---
+
+<section
+  id="comparacao-tabela"
+  class={cn(
+    'relative z-10 -mt-16 scroll-mt-8 rounded-t-[40px] bg-white px-4 pb-16 pt-10 shadow-[0_-12px_40px_rgba(21,21,21,0.08)] md:-mt-24 md:pb-20 md:pt-14',
+    className
+  )}
+  aria-labelledby="comparison-table-title"
+>
+  <div class="max-w-[1620px] mx-auto w-full flex flex-col gap-10">
+    <h2
+      id="comparison-table-title"
+      class="font-light italic text-[40px] md:text-[48px] leading-[120%] text-black text-center max-w-[912px] mx-auto"
+    >
+      Compare os principais caminhos para atrair clientes
+    </h2>
+
+    <div class="overflow-x-auto rounded-[20px] border border-[#EFEFEF]">
+      <table class="min-w-[640px] w-full text-left text-sm md:text-base">
+        <thead>
+          <tr class="bg-[#151515] text-white">
+            <th class="px-4 py-4 font-medium md:px-6">Opção</th>
+            <th class="px-4 py-4 font-medium md:px-6">Vantagem aparente</th>
+            <th class="px-4 py-4 font-medium md:px-6">Problema escondido</th>
+            <th class="px-4 py-4 font-medium md:px-6">Para quem faz sentido</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            rows.map(row => (
+              <tr
+                class={cn(
+                  'border-t border-[#EFEFEF]',
+                  row.highlight && 'bg-[#3219CA]/10 font-medium'
+                )}
+              >
+                <td class="px-4 py-4 md:px-6 align-top">{row.option}</td>
+                <td class="px-4 py-4 md:px-6 align-top text-[#333]">
+                  {row.advantage}
+                </td>
+                <td class="px-4 py-4 md:px-6 align-top text-[#333]">
+                  {row.problem}
+                </td>
+                <td class="px-4 py-4 md:px-6 align-top text-[#333]">
+                  {row.fit}
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+---
+interface Props {
+  className?: string;
+}
+
+import { cn } from '@/lib/utils';
+
+const { className } = Astro.props;
+
+const cases = [
+  {
+    name: 'Manda Donuts',
+    description:
+      'Com investimento inicial de R$500/mês, a Manda Donuts alcançou retorno médio de ROAS 7,49. Em 3 meses, foram R$1.304 investidos em anúncios e R$9.777 de faturamento captado pelo Meta Ads.',
+  },
+  {
+    name: 'Gài Arquitetura e Interiores',
+    description:
+      'Um escritório novo de arquitetura fechou R$62.077 em projetos investindo R$1.454 em 3 meses. A estratégia gerou 41 reuniões e 5 projetos fechados.',
+  },
+];
+---
+
+<section class={cn('px-4', className)}>
+  <div class="max-w-[1620px] mx-auto w-full flex flex-col gap-10">
+    <h2
+      class="font-light italic text-[40px] md:text-[48px] leading-[120%] text-black text-center"
+    >
+      Resultados reais de empresas que escolheram anunciar com estratégia
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {
+        cases.map(item => (
+          <div class="py-10 px-8 bg-[#1C1C1C] text-white rounded-[40px] flex flex-col gap-4">
+            <h3 class="text-[24px] md:text-[28px] leading-[120%] font-bold italic">
+              {item.name}
+            </h3>
+            <p class="text-base font-normal leading-[150%]">{item.description}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <p class="text-[#333] text-sm md:text-base leading-[150%] text-center max-w-[844px] mx-auto">
+      Resultados variam conforme mercado, oferta, atendimento, investimento,
+      concorrência e maturidade do negócio. O papel da assessoria é construir a
+      melhor estratégia possível com base em dados reais.
+    </p>
+  </div>
+</section>

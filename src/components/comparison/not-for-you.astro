@@ -1,0 +1,37 @@
+---
+interface Props {
+  className?: string;
+}
+
+import { cn } from '@/lib/utils';
+
+const { className } = Astro.props;
+
+const items = [
+  'Você quer resultado milagroso em poucos dias.',
+  'Você não quer investir em mídia.',
+  'Você não consegue responder os contatos recebidos.',
+  'Você quer terceirizar 100% da responsabilidade pela venda.',
+  'Você busca apenas o menor preço possível.',
+  'Você não quer acompanhar números nem tomar decisões com dados.',
+];
+---
+
+<section class={cn('px-4', className)}>
+  <div class="max-w-[1620px] mx-auto w-full">
+    <div
+      class="py-10 md:py-12 px-6 md:px-10 bg-[#F3F3F3] rounded-[40px] flex flex-col gap-8 max-w-[844px]"
+    >
+      <h2 class="font-light italic text-[36px] md:text-[48px] leading-[120%] text-black">
+        Talvez não seja para você se...
+      </h2>
+      <ul class="flex flex-col gap-4 text-[#333] text-base leading-[150%] pl-4">
+        {
+          items.map(item => (
+            <li class="list-disc">{item}</li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

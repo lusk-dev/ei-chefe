@@ -1,0 +1,62 @@
+---
+interface Props {
+  className?: string;
+}
+
+import { cn } from '@/lib/utils';
+
+const { className } = Astro.props;
+
+const items = [
+  'objetivo da campanha;',
+  'público certo;',
+  'criativo certo;',
+  'momento de compra;',
+  'canal de atendimento;',
+  'velocidade de resposta;',
+  'custo por contato;',
+  'taxa de conversão;',
+  'retorno sobre o investimento.',
+];
+---
+
+<section class={cn('px-4', className)}>
+  <div
+    class="max-w-[1620px] mx-auto w-full flex flex-col xl:flex-row gap-10 xl:gap-20"
+  >
+    <div class="flex flex-col gap-6 max-w-[696px]">
+      <h2 class="font-light italic text-[40px] md:text-[48px] leading-[120%] text-black">
+        Impulsionar publicação é diferente de construir uma máquina de aquisição.
+      </h2>
+      <p class="text-[#333] text-base leading-[19.2px]">
+        O botão de impulsionar pode até gerar alcance. Mas alcance sozinho não
+        paga conta.
+      </p>
+      <p class="text-[#333] text-base leading-[19.2px]">
+        Uma estratégia de tráfego precisa considerar:
+      </p>
+      <ul class="flex flex-col gap-2 text-[#333] text-base pl-4">
+        {
+          items.map(item => (
+            <li class="list-disc">{item}</li>
+          ))
+        }
+      </ul>
+      <p class="text-[#333] text-base leading-[19.2px]">
+        Sem isso, você pode até aparecer mais, mas não necessariamente vender
+        mais.
+      </p>
+    </div>
+
+    <div
+      class="flex-1 py-10 px-8 bg-[#F3F3F3] rounded-[40px] flex items-center"
+    >
+      <p
+        class="text-[#151515] text-2xl md:text-[32px] leading-[130%] font-medium italic text-center"
+      >
+        O problema não é anunciar. É anunciar sem saber exatamente o que precisa
+        acontecer depois do clique.
+      </p>
+    </div>
+  </div>
+</section>
