@@ -2,6 +2,7 @@
 import Hero from '@/components/analise/hero.astro';
 import Identificacao from '@/components/analise/identificacao.astro';
 import ValorReuniao from '@/components/analise/valor-reuniao.astro';
+import { FormAnalise } from '@/components/analise/form-analise.tsx';
 import Footer from '@/components/footer.astro';
 import Layout from '@/layouts/Layout.astro';
 ---
@@ -15,6 +16,25 @@ import Layout from '@/layouts/Layout.astro';
     <Hero />
     <Identificacao />
     <ValorReuniao />
+    <section id="form" class="px-4 py-16 md:py-20 scroll-mt-8">
+      <div class="max-w-[620px] mx-auto w-full flex flex-col gap-8">
+        <div class="flex flex-col gap-3 text-center">
+          <h2 class="text-white text-[28px] md:text-[40px] font-medium leading-[115%]">
+            Solicite sua análise gratuita
+          </h2>
+          <p class="text-[#B8B8C0] text-base md:text-lg">
+            Leva menos de 1 minuto. Vamos usar essas informações para entender
+            seu cenário antes da reunião.
+          </p>
+        </div>
+        <FormAnalise client:visible />
+        <ul class="flex flex-col gap-2 text-[#8A8A92] text-sm text-center">
+          <li>Seus dados estão seguros e não serão compartilhados.</li>
+          <li>Entraremos em contato apenas para tratar da sua análise.</li>
+          <li>Vagas limitadas por semana para garantir qualidade no atendimento.</li>
+        </ul>
+      </div>
+    </section>
     <Footer className="mt-20" />
   </main>
 </Layout>
