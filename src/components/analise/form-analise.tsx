@@ -73,8 +73,8 @@ export function FormAnalise() {
     setData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleBlur = (field: 'nome' | 'telefone') => {
-    if (!data[field].trim()) {
+  const handleBlur = (field: 'nome' | 'telefone', value: string) => {
+    if (!value.trim()) {
       setErrors((prev) => ({ ...prev, [field]: validate(data)[field] }));
     } else {
       setErrors((prev) => ({ ...prev, [field]: undefined }));
@@ -132,7 +132,7 @@ export function FormAnalise() {
           className={inputClass}
           value={data.nome}
           onChange={(e) => update('nome', e.target.value)}
-          onBlur={() => handleBlur('nome')}
+          onBlur={(e) => handleBlur('nome', e.target.value)}
           aria-required="true"
           aria-invalid={!!errors.nome}
           aria-describedby={errors.nome ? 'nome-error' : undefined}
@@ -170,7 +170,7 @@ export function FormAnalise() {
           placeholder="(88) 99999-0000"
           value={data.telefone}
           onChange={(e) => update('telefone', e.target.value)}
-          onBlur={() => handleBlur('telefone')}
+          onBlur={(e) => handleBlur('telefone', e.target.value)}
           aria-required="true"
           aria-invalid={!!errors.telefone}
           aria-describedby={errors.telefone ? 'telefone-error' : undefined}
