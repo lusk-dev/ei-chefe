@@ -1,0 +1,29 @@
+---
+const dores = [
+  'Campanhas que não performam como deveriam',
+  'Leads que não viram vendas',
+  'Custo por aquisição alto',
+  'Falta de previsibilidade',
+];
+---
+
+<section class="px-4 py-16 md:py-20">
+  <div class="max-w-[1100px] mx-auto w-full flex flex-col gap-10">
+    <h2 class="text-white text-[28px] md:text-[40px] font-medium leading-[115%] max-w-[860px]">
+      Você já investe (ou quer investir) em tráfego pago, mas sente que poderia
+      estar vendendo mais com o mesmo orçamento?
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {
+        dores.map((dor) => (
+          <div class="bg-[#1C1C1C] rounded-[28px] px-7 py-8 text-white text-lg md:text-xl font-normal leading-[140%]">
+            {dor}
+          </div>
+        ))
+      }
+    </div>
+    <p class="text-[#B8B8C0] text-lg md:text-xl">
+      Se você se identifica com isso, essa reunião é pra você.
+    </p>
+  </div>
+</section>
