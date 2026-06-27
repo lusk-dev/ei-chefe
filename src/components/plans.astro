@@ -6,6 +6,9 @@ interface Props {
 import { cn } from '@/lib/utils';
 
 import ChevronRightIcon from '@lucide/astro/icons/chevron-right';
+import GemIcon from '@lucide/astro/icons/gem';
+import RocketIcon from '@lucide/astro/icons/rocket';
+import TrendingUpIcon from '@lucide/astro/icons/trending-up';
 
 const { className } = Astro.props;
 ---
@@ -52,187 +55,269 @@ const { className } = Astro.props;
       </div>
     </div>
     <div class="gap-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-      <div
-        class="bg-[#F3F3F3] p-8 rounded-[30px] flex flex-col justify-between gap-8"
+      <article
+        class="rounded-[28px] bg-[#F5F5F6] border border-[#D8D8DD] px-6 pt-6 pb-5 flex flex-col min-h-[720px]"
       >
-        <div class="space-y-6">
-          <h3 class="text-black leading-tight">
-            <span class="font-light italic text-[40px] block"
-              >Quero começar,</span
-            >
-            <span class="font-bold text-[48px] block">Chefe</span>
-          </h3>
-
-          <div class="space-y-4">
-            <div class="space-y-1">
-              <p class="font-bold text-[#3219CA] text-xl">Planejamento</p>
-              <p class="font-bold text-[#3219CA] text-xl">Análise de Dados</p>
-              <p class="font-bold text-[#3219CA] text-xl">
-                Planejamento de Crescimento
-              </p>
-            </div>
-
-            <div class="space-y-3">
-              <p class="font-bold text-[#292D38] text-lg">
-                Análise de posicionamento de marca
-              </p>
-              <ul class="space-y-2 text-[#292D38] text-base font-normal">
-                <li class="flex items-start gap-2">
-                  <span class="text-[#292D38]/60 mt-1">•</span>
-                  <span>Sugestão para conteúdos</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-[#292D38]/60 mt-1">•</span>
-                  <span>Sugestões de edições de vídeos</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-[#292D38]/60 mt-1">•</span>
-                  <span
-                    >Sugestão para landing pages (páginas de alta conversão)</span
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="lg:py-[26px] lg:px-[51px] px-[31px] py-4 bg-[#151515] hover:bg-[#252525] transition-colors rounded-full text-white text-lg font-medium text-center"
-        >
-          Investimento em anúncios até R$2.500/mês
-        </div>
-      </div>
-      <div
-        class="bg-[#F3F3F3] p-8 rounded-[30px] flex flex-col justify-between gap-8"
-      >
-        <div class="space-y-6">
-          <h3 class="text-black leading-tight">
-            <span class="font-light italic text-[40px] block"
-              >Bora aumentar,</span
-            >
-            <span class="font-bold text-[48px] block">Chefe</span>
-          </h3>
-
-          <div class="space-y-4">
-            <div class="space-y-1">
-              <p class="font-bold text-[#3219CA] text-xl">
-                Assessoria de mídia paga
-              </p>
-              <p class="font-bold text-[#3219CA] text-xl">
-                Tudo do outro modelo +
-              </p>
-            </div>
-
-            <div class="space-y-3">
-              <p
-                class="font-bold text-[#292D38] text-lg flex items-center gap-2"
+        <div class="flex-1 space-y-5 text-[#1B1D22]">
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <div
+                class="size-10 rounded-xl bg-[#ECEAFB] text-[#4C37DA] flex items-center justify-center text-lg"
               >
-                Assessoria de análise de dados 🔍
-              </p>
-              <ul class="space-y-2 text-[#292D38] text-base font-normal">
-                <li class="flex items-start gap-2">
-                  <span class="text-[#292D38]/60 mt-1">•</span>
-                  <span>Gestão em multiplataforma de anúncio</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-[#292D38]/60 mt-1">•</span>
-                  <span>Configuração de Tags e Pixels</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-[#292D38]/60 mt-1">•</span>
-                  <span>Análise da velocidade do site realizado trimestral</span
-                  >
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-[#292D38]/60 mt-1">•</span>
-                  <span
-                    >Estudo dos concorrentes Benchmarking análise do site e
-                    anúncios anual</span
-                  >
-                </li>
-              </ul>
+                <RocketIcon class="size-5" />
+              </div>
+              <h3 class="leading-tight">
+                <span class="block italic font-light text-[38px]">Quero começar,</span>
+                <span class="block text-[43px] font-bold">Chefe</span>
+              </h3>
             </div>
-          </div>
-        </div>
-
-        <div
-          class="lg:py-[26px] lg:px-[51px] px-[31px] py-4 bg-[#151515] hover:bg-[#252525] transition-colors rounded-full text-white text-lg font-medium text-center"
-        >
-          Investimento em anúncios até R$2.500/mês
-        </div>
-      </div>
-      <div
-        class="px-8 py-10 rounded-[30px] flex flex-col gap-8 border-2 border-[#604EE9] bg-[#0A0A1F] relative overflow-hidden"
-      >
-        <!-- Gradient overlay concentrated at bottom -->
-        <div
-          class="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-[#604EE9]/40 via-[#604EE9]/10 to-transparent pointer-events-none rounded-[30px]"
-        >
-        </div>
-
-        <div class="relative z-10 space-y-8">
-          <!-- Title -->
-          <h3 class="text-white leading-tight">
-            <span class="font-light italic text-[40px] block"
-              >Quero Evoluir</span
-            >
-            <span class="font-bold text-[48px] block"> Modo Especialista </span>
-          </h3>
-
-          <!-- Services -->
-          <div class="text-white space-y-6">
-            <div class="space-y-1">
-              <p class="font-bold text-[#7B6EF6] text-xl">
-                Assessoria de mídia paga
-              </p>
-              <p class="font-bold text-[#7B6EF6] text-xl">
-                Assessoria de análise de dados
-              </p>
-            </div>
-
-            <div class="space-y-3">
-              <p class="font-bold text-lg">Tudo do outro modelo +</p>
-              <ul class="space-y-2 text-base font-normal">
-                <li class="flex items-start gap-2">
-                  <span class="text-white/60 mt-1">•</span>
-                  <span>Criação de criativo de imagem com IA (new)</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-white/60 mt-1">•</span>
-                  <span
-                    >Assessoria de vendas e resultados no processo comercial</span
-                  >
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-white/60 mt-1">•</span>
-                  <span
-                    >Análise da jornada do seu cliente para identificação do ICP</span
-                  >
-                </li>
-              </ul>
+            <div class="border-y border-[#D9D9DE] py-2.5">
+              <p class="text-[#6A6D75] text-[18px]">Ideal até R$ 2.000/mês em anúncios</p>
             </div>
           </div>
 
-          <!-- Exclusivo badge and text -->
-          <div class="flex items-start gap-4 flex-col xl:flex-row">
-            <div
-              class="bg-[#604EE9] py-3 px-8 rounded-full text-white font-medium text-base shrink-0"
-            >
-              Exclusivo
-            </div>
-            <p class="text-white/90 text-sm leading-[21px]">
-              1 Treinamento de atendimento/vendas com parceiros estratégicos com
-              foco em melhorar a conversão de vendas | ANUAL
+          <div class="space-y-1">
+            <p class="text-[#8D9098] text-[35px] leading-none line-through">
+              R$ 1.997/mês
             </p>
+            <p class="text-[69px] font-bold leading-[0.95] tracking-tight">
+              R$ 997<span class="text-[47px] font-semibold">/mês</span>
+            </p>
+            <p class="text-[#4331D7] text-[34px] font-bold leading-tight">
+              ou 6x de R$ 166 no cartão
+            </p>
+            <p class="pt-1 text-[#666A73] text-[17px]">Contrato mínimo de 6 meses</p>
           </div>
 
-          <div
-            class="lg:py-[26px] lg:px-[51px] px-[31px] py-4 bg-[#604EE9] hover:bg-[#7B6EF6] transition-colors rounded-full text-white font-medium text-lg text-center"
-          >
-            Investimento em anúncios até R$5.000/mês
+          <div class="border-t border-[#D9D9DE] pt-5 space-y-5">
+            <div class="space-y-2">
+              <p class="font-bold text-[30px]">O que está incluso</p>
+              <ul class="space-y-1.5 text-[26px] text-[#30343D]">
+                <li class="flex items-start gap-2">
+                  <span class="text-[#4E3BDD]">●</span><span>Planejamento</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#4E3BDD]">●</span><span>Análise de Dados</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#4E3BDD]">●</span><span>Planejamento de Crescimento</span>
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-2">
+              <p class="font-bold text-[30px]">Análise de posicionamento de marca</p>
+              <ul class="space-y-1.5 text-[26px] text-[#30343D]">
+                <li class="flex items-start gap-2">
+                  <span class="text-[#4E3BDD]">●</span><span>Sugestões de conteúdos</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#4E3BDD]">●</span><span>Sugestões de edições de vídeos</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#4E3BDD]">●</span
+                  ><span>Sugestão para landing pages (páginas de alta conversão)</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+
+        <a
+          href="https://bit.ly/wpp-eichefe-ads"
+          target="_blank"
+          class="mt-6 rounded-full bg-[#0F1115] hover:bg-[#1B1D22] text-white text-[39px] font-semibold px-8 py-5 flex items-center justify-center gap-5 transition-colors"
+        >
+          Começar agora
+          <ChevronRightIcon class="size-8" />
+        </a>
+        <p class="mt-4 text-[#6D717A] text-[17px] text-center">
+          🔒 Acesso seguro e suporte especializado
+        </p>
+      </article>
+
+      <article
+        class="rounded-[28px] bg-[#F5F5F6] border-2 border-[#6959E8] px-6 pt-6 pb-5 flex flex-col min-h-[720px] relative shadow-[0_0_25px_rgba(90,70,238,0.28)]"
+      >
+        <span
+          class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-[#4A39D9] text-white text-[16px] font-semibold px-5 py-1.5"
+        >
+          ✦ Mais escolhido
+        </span>
+
+        <div class="flex-1 space-y-5 text-[#1B1D22]">
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center gap-3">
+              <div
+                class="size-10 rounded-xl bg-[#ECEAFB] text-[#4C37DA] flex items-center justify-center text-lg"
+              >
+                <TrendingUpIcon class="size-5" />
+              </div>
+              <h3 class="leading-tight">
+                <span class="block italic font-light text-[38px]">Bora aumentar,</span>
+                <span class="block text-[43px] font-bold">Chefe</span>
+              </h3>
+            </div>
+            <div class="border-y border-[#D9D9DE] py-2.5">
+              <p class="text-[#5E49E6] text-[18px] font-semibold">
+                De R$ 2.000 a R$ 5.000/mês em anúncios
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <p class="text-[#8D9098] text-[35px] leading-none line-through">
+              R$ 2.997/mês
+            </p>
+            <p class="text-[69px] font-bold leading-[0.95] tracking-tight">
+              R$ 1.997<span class="text-[47px] font-semibold">/mês</span>
+            </p>
+            <p class="text-[#4331D7] text-[34px] font-bold leading-tight">
+              ou 6x de R$ 332 no cartão
+            </p>
+            <p class="pt-1 text-[#666A73] text-[17px]">Contrato mínimo de 6 meses</p>
+          </div>
+
+          <div class="border-t border-[#D9D9DE] pt-5 space-y-5">
+            <div class="space-y-2">
+              <p class="font-bold text-[30px]">Tudo do plano Começar, mais:</p>
+              <ul class="space-y-1.5 text-[26px] text-[#30343D]">
+                <li class="flex items-start gap-2">
+                  <span class="text-[#4E3BDD]">●</span><span>Assessoria de mídia paga</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#4E3BDD]">●</span><span>Tudo do outro modelo +</span>
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-2">
+              <p class="font-bold text-[30px]">Assessoria de análise de dados 🔎</p>
+              <ul class="space-y-1.5 text-[26px] text-[#30343D]">
+                <li class="flex items-start gap-2">
+                  <span class="text-[#4E3BDD]">●</span><span>Gestão em multiplataforma de anúncio</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#4E3BDD]">●</span><span>Configuração de Tags e Pixels</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#4E3BDD]">●</span
+                  ><span>Análise da velocidade do site (trimestral)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#4E3BDD]">●</span><span>Benchmarking de concorrentes e anúncios</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="https://bit.ly/wpp-eichefe-ads"
+          target="_blank"
+          class="mt-6 rounded-full bg-[#4E3BDD] hover:bg-[#5C49E9] text-white text-[39px] font-semibold px-8 py-5 flex items-center justify-center gap-5 transition-colors"
+        >
+          Quero escalar
+          <ChevronRightIcon class="size-8" />
+        </a>
+        <p class="mt-4 text-[#6D717A] text-[17px] text-center">
+          🔒 Acesso seguro e suporte prioritário
+        </p>
+      </article>
+
+      <article
+        class="rounded-[28px] border border-[#6354E6] px-6 pt-6 pb-5 flex flex-col min-h-[720px] relative overflow-hidden text-white"
+        style="background: radial-gradient(120% 85% at 50% 100%, rgba(102, 82, 255, 0.4) 0%, rgba(9, 11, 28, 0.96) 42%, #05060F 100%);"
+      >
+        <div
+          class="pointer-events-none absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#6B58F0]/40 to-transparent"
+        >
+        </div>
+
+        <div class="relative z-10 flex-1 space-y-5">
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <div
+                class="size-10 rounded-xl border border-[#5D4BE0] bg-[#1A1640] text-[#9E90FF] flex items-center justify-center text-lg"
+              >
+                <GemIcon class="size-5" />
+              </div>
+              <h3 class="leading-tight">
+                <span class="block italic font-light text-[38px]">Quero evoluir,</span>
+                <span class="block text-[43px] font-bold">Modo Especialista</span>
+              </h3>
+            </div>
+            <div class="border-y border-white/15 py-2.5">
+              <p class="text-[#9A8CFF] text-[18px] font-semibold">
+                Acima de R$ 5.000/mês em anúncios
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <p class="text-white/45 text-[35px] leading-none line-through">
+              R$ 5.997/mês
+            </p>
+            <p class="text-[69px] font-bold leading-[0.95] tracking-tight">
+              R$ 3.997<span class="text-[47px] font-semibold">/mês</span>
+            </p>
+            <p class="text-[#9A8CFF] text-[34px] font-bold leading-tight">
+              ou 6x de R$ 666 no cartão
+            </p>
+            <p class="pt-1 text-white/80 text-[17px]">Contrato mínimo de 6 meses</p>
+          </div>
+
+          <div class="border-t border-white/15 pt-5 space-y-5">
+            <div class="space-y-2">
+              <p class="font-bold text-[30px]">Tudo do plano Aumentar, mais:</p>
+              <ul class="space-y-1.5 text-[26px] text-white/90">
+                <li class="flex items-start gap-2">
+                  <span class="text-[#8E7EFF]">●</span><span>Assessoria de mídia paga</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#8E7EFF]">●</span><span>Assessoria de análise de dados</span>
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-2">
+              <p class="font-bold text-[30px]">Tudo do outro modelo +</p>
+              <ul class="space-y-1.5 text-[26px] text-white/90">
+                <li class="flex items-start gap-2">
+                  <span class="text-[#8E7EFF]">●</span><span>Criação de criativos com IA (new)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#8E7EFF]">●</span
+                  ><span>Assessoria de vendas e resultados no processo comercial</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#8E7EFF]">●</span><span>Análise da jornada para identificação do ICP</span>
+                </li>
+              </ul>
+            </div>
+            <div class="flex items-start gap-3 text-[16px]">
+              <span
+                class="shrink-0 rounded-full border border-[#6C5EF0] bg-[#342A7E] px-3 py-1 font-semibold text-[#C8C0FF]"
+              >
+                ✦ Exclusivo
+              </span>
+              <p class="text-white/90">
+                1 treinamento de atendimento/vendas com parceiros estratégicos
+                com foco em melhorar a conversão de vendas | ANUAL
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="https://bit.ly/wpp-eichefe-ads"
+          target="_blank"
+          class="relative z-10 mt-6 rounded-full bg-[#4E3BDD] hover:bg-[#5C49E9] text-white text-[39px] font-semibold px-8 py-5 flex items-center justify-center gap-5 transition-colors"
+        >
+          Quero dominar
+          <ChevronRightIcon class="size-8" />
+        </a>
+        <p class="relative z-10 mt-4 text-white/65 text-[17px] text-center">
+          🔒 Acesso seguro e suporte VIP
+        </p>
+      </article>
     </div>
   </div>
 </div>
