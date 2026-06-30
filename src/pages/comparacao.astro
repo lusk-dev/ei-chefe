@@ -1,0 +1,34 @@
+---
+import ComparisonHero from '@/components/comparison/hero.astro';
+import MarketTable from '@/components/comparison/market-table.astro';
+import SoloVsAssessoria from '@/components/comparison/solo-vs-assessoria.astro';
+import BoostVsStrategy from '@/components/comparison/boost-vs-strategy.astro';
+import AgencyVsSpecialist from '@/components/comparison/agency-vs-specialist.astro';
+import Differentiators from '@/components/comparison/differentiators.astro';
+import NotForYou from '@/components/comparison/not-for-you.astro';
+import Cases from '@/components/comparison/cases.astro';
+import CostOfInaction from '@/components/comparison/cost-of-inaction.astro';
+import FinalCta from '@/components/comparison/final-cta.astro';
+import Footer from '@/components/footer.astro';
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout
+  title="Comparação de Estratégias de Aquisição | Ei Chefe Ads"
+  description="Compare indicação, conteúdo orgânico, impulsionamento, tráfego próprio, agências tradicionais e a assessoria da Ei Chefe Ads para decidir a melhor estratégia para seu negócio."
+  canonical="https://eichefeads.com.br/comparacao"
+>
+  <main class="flex flex-col gap-20 md:gap-28 lg:gap-32">
+    <ComparisonHero />
+    <MarketTable />
+    <SoloVsAssessoria />
+    <BoostVsStrategy />
+    <AgencyVsSpecialist />
+    <Differentiators />
+    <NotForYou />
+    <Cases />
+    <CostOfInaction />
+    <FinalCta />
+    <Footer />
+  </main>
+</Layout>

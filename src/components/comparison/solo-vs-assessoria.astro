@@ -1,0 +1,104 @@
+---
+interface Props {
+  className?: string;
+}
+
+import { cn } from '@/lib/utils';
+import WhatsappButton from '../whatsapp-button.astro';
+
+const { className } = Astro.props;
+
+const challenges = [
+  'qual público testar primeiro;',
+  'quanto investir sem desperdiçar verba;',
+  'quais criativos usar;',
+  'quando pausar uma campanha;',
+  'como medir custo por contato;',
+  'como saber se o problema está no anúncio, na oferta, no atendimento ou na página;',
+  'como transformar dados em decisão.',
+];
+
+const comparisons = [
+  {
+    solo: 'Aprende por tentativa e erro',
+    assessoria: 'Usa experiência de campanhas reais',
+  },
+  {
+    solo: 'Perde tempo configurando tudo',
+    assessoria: 'Foca em gerenciar seu negócio',
+  },
+  {
+    solo: 'Pode gastar verba sem clareza',
+    assessoria: 'Investe com previsão, acompanhamento e análise',
+  },
+  {
+    solo: 'Olha só para curtidas e cliques',
+    assessoria: 'Analisa contatos, vendas e retorno',
+  },
+  {
+    solo: 'Depende de achismo',
+    assessoria: 'Trabalha com dados e melhoria contínua',
+  },
+];
+---
+
+<section class={cn('px-4', className)}>
+  <div class="max-w-[1620px] mx-auto w-full flex flex-col gap-10">
+    <div class="flex flex-col gap-4 max-w-[844px]">
+      <h2 class="font-light italic text-[40px] md:text-[48px] leading-[120%] text-black">
+        Fazer sozinho pode parecer mais barato. Até você calcular o custo dos
+        erros.
+      </h2>
+      <p class="text-[#333] text-base leading-[19.2px]">
+        Criar uma campanha no Meta Ads ou Google Ads é fácil. Difícil é saber:
+      </p>
+      <ul class="flex flex-col gap-2 text-[#333] text-base pl-4">
+        {
+          challenges.map(item => (
+            <li class="list-disc">{item}</li>
+          ))
+        }
+      </ul>
+      <p class="text-[#333] text-base leading-[19.2px]">
+        O tráfego pago não é apenas apertar botões. É uma combinação de
+        estratégia, análise, comunicação e melhoria contínua.
+      </p>
+    </div>
+
+    <div class="overflow-x-auto rounded-[20px] border border-[#EFEFEF]">
+      <table class="min-w-[480px] w-full text-left">
+        <thead>
+          <tr>
+            <th
+              class="px-6 py-4 bg-[#F3F3F3] text-black font-medium text-base md:text-lg"
+            >
+              Fazendo sozinho
+            </th>
+            <th
+              class="px-6 py-4 bg-[#151515] text-white font-medium text-base md:text-lg"
+            >
+              Com a Ei Chefe Ads
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            comparisons.map(row => (
+              <tr class="border-t border-[#EFEFEF]">
+                <td class="px-6 py-4 text-[#333] align-top">{row.solo}</td>
+                <td class="px-6 py-4 text-[#333] bg-[#3219CA]/5 align-top">
+                  {row.assessoria}
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <WhatsappButton
+      label="Quero parar de testar no escuro"
+      message="Olá, quero parar de testar no escuro e entender a melhor estratégia para meu negócio"
+    />
+  </div>
+</section>

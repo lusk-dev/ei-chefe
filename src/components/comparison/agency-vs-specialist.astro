@@ -1,0 +1,56 @@
+---
+interface Props {
+  className?: string;
+}
+
+import { cn } from '@/lib/utils';
+
+const { className } = Astro.props;
+
+const items = [
+  'Posicionamento da marca;',
+  'Sugestão de linha editorial;',
+  'Melhorias em landing pages;',
+  'Análise de criativos;',
+  'Acompanhamento de dados;',
+  'Geração de contatos qualificados;',
+  'Entendimento do processo comercial;',
+  'Recomendações para melhorar conversão.',
+];
+---
+
+<section class={cn('px-4', className)}>
+  <div class="max-w-[1620px] mx-auto w-full flex flex-col lg:flex-row gap-10">
+    <div class="flex flex-col gap-4 max-w-[696px]">
+      <h2 class="font-light italic text-[40px] md:text-[48px] leading-[120%] text-black">
+        Você precisa de alguém que gerencie campanhas ou de alguém que entenda o
+        crescimento do seu negócio?
+      </h2>
+      <p class="text-[#333] text-base leading-[19.2px]">
+        Muitas agências entregam anúncios. Poucas entram no detalhe da jornada
+        do cliente.
+      </p>
+      <p class="text-[#333] text-base leading-[19.2px]">
+        Na Ei Chefe Ads, o trabalho vai além de subir campanhas. A assessoria
+        considera:
+      </p>
+    </div>
+
+    <div
+      class="flex-1 py-10 md:py-12 px-6 bg-black text-white flex flex-col gap-6 rounded-[40px]"
+    >
+      <ul class="flex flex-col gap-3 text-base leading-[150%] pl-4">
+        {
+          items.map(item => (
+            <li class="list-disc">{item}</li>
+          ))
+        }
+      </ul>
+      <div class="h-px w-full bg-white/20"></div>
+      <p class="text-base font-normal leading-[150%]">
+        Porque, no fim, o objetivo não é apenas gerar cliques. O objetivo é
+        fazer o seu negócio receber mais oportunidades reais de venda.
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,55 @@
+---
+interface Props {
+  className?: string;
+}
+
+import ChevronRight from '@lucide/astro/icons/chevron-right';
+import { cn } from '@/lib/utils';
+
+const { className } = Astro.props;
+---
+
+<section class={cn('px-4', className)}>
+  <div
+    class="max-w-[1620px] mx-auto w-full p-6 md:p-10 pb-[80px] bg-[#030406] relative overflow-hidden rounded-[40px]"
+  >
+    <div
+      class="absolute inset-0 bg-gradient-radial from-[#2A25A6]/20 via-[#1A1A2E]/10 to-transparent pointer-events-none"
+    >
+    </div>
+    <div
+      class="relative flex flex-col gap-8 items-center text-center max-w-[844px] mx-auto"
+    >
+      <h2
+        class="text-[36px] md:text-[48px] leading-[120%] font-medium text-[#DDD]"
+      >
+        <span class="font-light italic">
+          Quer entender qual caminho faz mais sentido
+        </span>
+        para o seu negócio agora?
+      </h2>
+      <p class="text-white text-base leading-[150%]">
+        Se você quer vender mais, atrair clientes melhores e parar de depender
+        apenas da sorte, vamos conversar. A ideia não é empurrar um plano. É
+        entender seu momento, seu mercado e mostrar se existe uma oportunidade
+        real de crescimento com anúncios online.
+      </p>
+      <a
+        href="/depoimentos"
+        class={cn(
+          'inline-flex min-h-[44px] max-w-max items-center gap-2 self-center rounded-[30px] bg-[#151515] px-4 py-2 text-[14px] font-light leading-[21px] text-white transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white',
+          className
+        )}
+        aria-label="Ver depoimentos de clientes da Ei Chefe Ads"
+      >
+        Conversar com a Ei Chefe Ads
+        <span
+          class="flex size-[35px] shrink-0 items-center justify-center rounded-[17.5px] bg-white"
+          aria-hidden="true"
+        >
+          <ChevronRight class="size-3.5 text-[#151515]" />
+        </span>
+      </a>
+    </div>
+  </div>
+</section>

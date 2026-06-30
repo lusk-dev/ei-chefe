@@ -1,0 +1,42 @@
+---
+import TestimonialCard from '@/components/testimonial-card.astro';
+import TestimonialsPageHeader from '@/components/testimonials-page-header.astro';
+import Footer from '@/components/footer.astro';
+import WhatsappButton from '@/components/whatsapp-button.astro';
+import { testimonials } from '@/data/testimonials';
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout
+  title="Depoimentos | Ei Chefe Ads"
+  description="Resultados reais de clientes: tráfego pago, lançamentos e faturamento."
+  canonical="https://eichefeads.com.br/depoimentos"
+>
+  <main class="bg-background">
+    <TestimonialsPageHeader />
+
+    <section class="px-4 pb-20 md:pb-28" aria-label="Depoimentos de clientes">
+      <div
+        class="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2 md:gap-x-10 md:gap-y-12"
+      >
+        {
+          testimonials.map(testimonial => (
+            <TestimonialCard testimonial={testimonial} />
+          ))
+        }
+      </div>
+    </section>
+
+    <section
+      class="flex flex-col items-center gap-6 px-4 pb-24 md:pb-32"
+      aria-label="Entre em contato"
+    >
+      <p class="text-center text-lg font-normal text-[#151515]/80">
+        Quer resultados como esses no seu negócio?
+      </p>
+      <WhatsappButton />
+    </section>
+
+    <Footer />
+  </main>
+</Layout>

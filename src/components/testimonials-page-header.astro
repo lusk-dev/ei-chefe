@@ -1,0 +1,28 @@
+---
+import WhatsappButton from './whatsapp-button.astro';
+---
+
+<header class="px-4 pt-10 pb-12 md:pt-16 md:pb-16">
+  <div class="mx-auto flex max-w-7xl flex-col items-center gap-10">
+    <div class="flex w-full max-w-[1620px] flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+      <a href="/" aria-label="Voltar para a página inicial">
+        <img
+          src="/images/logos/ei-chefe-logo.svg"
+          alt="eiChefe Logo"
+          width="163"
+          height="53"
+          loading="eager"
+        />
+      </a>
+      <WhatsappButton />
+    </div>
+
+    <div class="max-w-3xl text-center">
+      <h1
+        class="text-[40px] font-light italic leading-[120%] text-[#151515] md:text-[48px]"
+      >
+        O que falarão sobre minha parceria
+      </h1>
+    </div>
+  </div>
+</header>

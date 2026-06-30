@@ -1,0 +1,38 @@
+---
+import CheckIcon from '@lucide/astro/icons/check';
+
+const ganhos = [
+  'Um diagnóstico rápido das suas campanhas atuais',
+  'Identificação de possíveis desperdícios de verba',
+  'Oportunidades práticas para melhorar conversão',
+  'Direcionamento claro para escalar seus resultados',
+];
+---
+
+<section class="px-4 py-16 md:py-20">
+  <div
+    class="max-w-[1100px] mx-auto w-full bg-[#2A25A6] rounded-[40px] px-7 py-12 md:px-14 md:py-16 flex flex-col gap-8"
+  >
+    <h2 class="text-white text-[28px] md:text-[40px] font-medium leading-[115%]">
+      O que você vai ganhar nessa conversa:
+    </h2>
+    <ul class="flex flex-col gap-5">
+      {
+        ganhos.map((ganho) => (
+          <li class="flex items-start gap-4 text-white text-lg md:text-xl">
+            <span
+              class="shrink-0 size-7 rounded-full bg-white/20 flex items-center justify-center mt-0.5"
+              aria-hidden="true"
+            >
+              <CheckIcon class="size-4 text-white" />
+            </span>
+            {ganho}
+          </li>
+        ))
+      }
+    </ul>
+    <p class="text-white/80 text-lg md:text-xl font-light italic">
+      Sem compromisso. Sem enrolação. Só clareza.
+    </p>
+  </div>
+</section>
