@@ -213,13 +213,11 @@ export function ResultsCalculator() {
 
           {/* CTA Button */}
           <a
-            href="https://bit.ly/wpp-eichefe-ads"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/analise-gratuita"
             className="block w-full bg-[#2A25A6] hover:bg-[#3530B8] text-white py-4 rounded-full font-medium transition-colors text-base text-center mt-6"
-            aria-label="Fale com um especialista em tráfego pago via WhatsApp"
+            aria-label="Agendar análise gratuita"
           >
-            Fale com um Especialista
+            Agendar análise gratuita
           </a>
         </div>
       </div>

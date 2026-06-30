@@ -6,27 +6,31 @@ interface Props {
   label?: string;
   message?: string;
   className?: string;
+  href?: string;
 }
 
 const {
   label = 'CONVERSAR AGORA',
   message = 'Olá, quero vender mais com anúncios',
   className,
+  href: hrefProp,
 } = Astro.props;
 
-const href = `https://api.whatsapp.com/send?phone=5588999030508&text=${encodeURIComponent(message)}`;
+const whatsappHref = `https://api.whatsapp.com/send?phone=5588999030508&text=${encodeURIComponent(message)}`;
+const href = hrefProp ?? whatsappHref;
+const isInternal = href.startsWith('/');
 ---
 
 <a
   href={href}
-  target="_blank"
-  rel="noopener noreferrer"
+  target={isInternal ? undefined : '_blank'}
+  rel={isInternal ? undefined : 'noopener noreferrer'}
   class={cn(
     'px-4 py-2 bg-[#151515] text-white rounded-[30px] flex gap-2 items-center max-w-max font-light text-[14px] leading-[21px] w-full justify-between self-end',
     className
   )}
-  aria-label={`${label} via WhatsApp`}
-  onclick="return gtag_report_conversion(this.href);"
+  aria-label={isInternal ? label : `${label} via WhatsApp`}
+  {...(!isInternal && { onclick: 'return gtag_report_conversion(this.href);' })}
 >
   {label}
   <div
@@ -37,18 +41,20 @@ const href = `https://api.whatsapp.com/send?phone=5588999030508&text=${encodeURI
   </div>
 </a>
 
-<script is:inline>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-824780487/68QoCPeiz4sYEMfNpIkD',
-      'event_callback': callback,
-      'allow_enhanced_conversions': true
-  });
-  return false;
-}
-</script>
+{!isInternal && (
+  <script is:inline>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-824780487/68QoCPeiz4sYEMfNpIkD',
+        'event_callback': callback,
+        'allow_enhanced_conversions': true
+    });
+    return false;
+  }
+  </script>
+)}
