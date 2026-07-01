@@ -26,6 +26,16 @@ const staggerClass =
   {
     media.type === 'text' ? (
       <div class="flex flex-col gap-4 rounded-2xl bg-white p-8 shadow-lg ring-1 ring-black/5 md:min-h-[320px] md:justify-center">
+        {media.logoSrc && (
+          <div class="flex justify-center pb-2">
+            <img
+              src={media.logoSrc}
+              alt={media.logoAlt ?? name}
+              loading="lazy"
+              class="max-h-14 w-full max-w-[240px] object-contain"
+            />
+          </div>
+        )}
         <div>
           <h3 class="text-xl font-semibold text-[#151515]">{name}</h3>
           <p class="mt-1 text-sm font-medium text-[#3219CA]">{business}</p>
@@ -33,6 +43,38 @@ const staggerClass =
         <blockquote class="text-base leading-relaxed text-[#151515]/90">
           &ldquo;{quote}&rdquo;
         </blockquote>
+      </div>
+    ) : media.type === 'image' && media.layout === 'card' ? (
+      <div class="flex flex-col gap-6 rounded-2xl bg-white p-8 shadow-lg ring-1 ring-black/5 md:min-h-[320px] md:justify-center">
+        {media.src ? (
+          <div class="flex justify-center">
+            <img
+              src={media.src}
+              alt={media.alt}
+              loading="lazy"
+              class="max-h-48 w-full max-w-full object-contain"
+            />
+          </div>
+        ) : (
+          <div
+            class="flex flex-col items-center justify-center gap-3 rounded-xl bg-[#EFEFEF] py-16 text-[#151515]/60"
+            role="img"
+            aria-label={media.alt}
+          >
+            <ImageIcon class="size-10 stroke-[1.5]" aria-hidden="true" />
+            <span class="text-sm font-medium">Em breve</span>
+          </div>
+        )}
+        <div>
+          <h3 class="text-xl font-semibold text-[#151515]">{name}</h3>
+          <p class="mt-1 text-sm font-medium text-[#3219CA]">{business}</p>
+        </div>
+        <blockquote class="text-base leading-relaxed text-[#151515]/90">
+          &ldquo;{quote}&rdquo;
+        </blockquote>
+        {extra && (
+          <p class="text-sm leading-relaxed text-[#151515]/70">{extra}</p>
+        )}
       </div>
     ) : (
       <div class="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5">

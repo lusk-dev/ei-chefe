@@ -1,7 +1,7 @@
 export type TestimonialMedia =
   | { type: 'video'; youtubeId: string }
-  | { type: 'image'; alt: string; src?: string }
-  | { type: 'text' };
+  | { type: 'image'; alt: string; src?: string; layout?: 'media' | 'card' }
+  | { type: 'text'; logoSrc?: string; logoAlt?: string };
 
 export interface Testimonial {
   id: string;
@@ -31,7 +31,7 @@ export const testimonials: Testimonial[] = [
     business: 'Curso de Pudim',
     quote:
       'Valor investido no primeiro lançamento R$2258, retorno R$14.328',
-    media: { type: 'video', youtubeId: 'ezF8ERVWyq8' },
+    media: { type: 'video', youtubeId: 'ezf8ERVWyq8' },
     stagger: 'up',
   },
   {
@@ -40,7 +40,11 @@ export const testimonials: Testimonial[] = [
     business: 'Captação de Pacientes em 1 trimestre 2023',
     quote:
       'Faturamento constante mensal da clinica entre 80K a 100K em serviços de estética avançada',
-    media: { type: 'image', alt: 'Foto da Dra. Jessyca Martins' },
+    media: {
+      type: 'image',
+      alt: 'Foto da Dra. Jessyca Martins',
+      src: '/4U3TWVuWsQB89Z.webp',
+    },
     stagger: 'down',
   },
   {
@@ -66,7 +70,11 @@ export const testimonials: Testimonial[] = [
     business: 'Plataforma de cursos online',
     quote:
       'Expansão de novos canais de aquisição, faturamento mais de 6 dígitos todos os meses',
-    media: { type: 'text' },
+    media: {
+      type: 'text',
+      logoSrc: '/7jZcz8QM91hqYd.webp',
+      logoAlt: 'Logo Sóeducador',
+    },
     stagger: 'up',
   },
 ];
