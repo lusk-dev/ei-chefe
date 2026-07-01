@@ -3,6 +3,8 @@ import { useRef, useState } from 'react';
 
 const WHATSAPP_PHONE = '5588999030508';
 const GTM_SEND_TO = 'AW-824780487/68QoCPeiz4sYEMfNpIkD';
+const WEB3FORMS_ACCESS_KEY = '4439a0bd-ebb2-47fa-ba1c-f855853a7410';
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
 const SEGMENTOS = [
   'Negócio local / Serviços',
@@ -26,6 +28,35 @@ type FieldErrors = Partial<Record<'nome' | 'telefone', string>>;
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
+  }
+}
+
+export function buildWeb3FormsPayload(data: FormState) {
+  return {
+    access_key: WEB3FORMS_ACCESS_KEY,
+    subject: 'Nova solicitação - Análise Gratuita | Ei Chefe Ads',
+    name: data.nome.trim(),
+    empresa: data.empresa.trim() || 'Não informado',
+    phone: data.telefone.trim(),
+    segmento: data.segmento || 'Não informado',
+    message: data.descricao.trim() || 'Não informado',
+  };
+}
+
+export async function submitToWeb3Forms(data: FormState): Promise<void> {
+  const response = await fetch(WEB3FORMS_ENDPOINT, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify(buildWeb3FormsPayload(data)),
+  });
+
+  const result = (await response.json()) as { success?: boolean; message?: string };
+
+  if (!response.ok || !result.success) {
+    throw new Error(result.message ?? 'Falha ao enviar formulário');
   }
 }
 
@@ -66,6 +97,7 @@ export function FormAnalise() {
   const [data, setData] = useState<FormState>(INITIAL);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const nomeRef = useRef<HTMLInputElement>(null);
   const telefoneRef = useRef<HTMLInputElement>(null);
 
@@ -81,10 +113,11 @@ export function FormAnalise() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors = validate(data);
     setErrors(newErrors);
+    setSubmitError(null);
     if (newErrors.nome) {
       nomeRef.current?.focus();
       return;
@@ -95,6 +128,15 @@ export function FormAnalise() {
     }
 
     setLoading(true);
+
+    try {
+      await submitToWeb3Forms(data);
+    } catch {
+      setSubmitError('Não foi possível enviar. Tente novamente em instantes.');
+      setLoading(false);
+      return;
+    }
+
     const url = buildWhatsAppUrl(data);
     let redirected = false;
     const redirect = () => {
@@ -231,6 +273,11 @@ export function FormAnalise() {
       >
         {loading ? 'Enviando...' : 'Quero minha análise'}
       </button>
+      {submitError && (
+        <p className={errorClass} role="alert">
+          {submitError}
+        </p>
+      )}
     </form>
   );
 }
